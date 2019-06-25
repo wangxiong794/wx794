@@ -1,307 +1,172 @@
 <!DOCTYPE html>
+<html lang="en">
 
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--Description-->
+    
+        <meta name="description" content="1 APP测试基本流程1.1流程图
+1.2测试周期测试周期可按项目的开发周期来确定测试时间，一般测试时间为两三周（即15个工作日），根据项目情况以及版本质量可适当缩短或延长测试时间。正式测试前先向主管确认项目排期。
+1.3测试资源测试任务开始前，检查各项测试资源。产品功能需求文档；产品原型图；产品效">
+    
 
+    <!--Author-->
+    
+        <meta name="author" content="wx794">
+    
 
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="App测试流程及测试点">
+    
 
+    <!--Open Graph Description-->
+    
 
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="伊甸园">
 
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
 
+    <!--Page Cover-->
+    
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="twitter:card" content="summary">
+    
 
+    <!-- Title -->
+    
+    <title>App测试流程及测试点 - 伊甸园</title>
 
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/wx794/css/style.css">
 
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/wx794/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/wx794/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/wx794/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/wx794/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/wx794/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/wx794/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/wx794/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="App测试,">
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="1 APP测试基本流程1.1流程图 1.2测试周期测试周期可按项目的开发周期来确定测试时间，一般测试时间为两三周（即15个工作日），根据项目情况以及版本质量可适当缩短或延长测试时间。正式测试前先向主管确认项目排期。 1.3测试资源测试任务开始前，检查各项测试资源。产品功能需求文档；产品原型图；产品效果图；行为统计分析定义文档；测试设备（ios3.1.3-ios5.0.1；Android1.6-An">
-<meta name="keywords" content="App测试">
-<meta property="og:type" content="article">
-<meta property="og:title" content="App测试流程及测试点">
-<meta property="og:url" content="https://wangxiong794.github.io/2019/06/05/AppTest1/index.html">
-<meta property="og:site_name" content="伊甸园">
-<meta property="og:description" content="1 APP测试基本流程1.1流程图 1.2测试周期测试周期可按项目的开发周期来确定测试时间，一般测试时间为两三周（即15个工作日），根据项目情况以及版本质量可适当缩短或延长测试时间。正式测试前先向主管确认项目排期。 1.3测试资源测试任务开始前，检查各项测试资源。产品功能需求文档；产品原型图；产品效果图；行为统计分析定义文档；测试设备（ios3.1.3-ios5.0.1；Android1.6-An">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/06/05/5cf78169bba4354407.png">
-<meta property="og:updated_time" content="2019-06-19T09:37:01.805Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="App测试流程及测试点">
-<meta name="twitter:description" content="1 APP测试基本流程1.1流程图 1.2测试周期测试周期可按项目的开发周期来确定测试时间，一般测试时间为两三周（即15个工作日），根据项目情况以及版本质量可适当缩短或延长测试时间。正式测试前先向主管确认项目排期。 1.3测试资源测试任务开始前，检查各项测试资源。产品功能需求文档；产品原型图；产品效果图；行为统计分析定义文档；测试设备（ios3.1.3-ios5.0.1；Android1.6-An">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/05/5cf78169bba4354407.png">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/wx794/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://wangxiong794.github.io/2019/06/05/AppTest1/">
-
-
-
-
-
-  <title>App测试流程及测试点 | 伊甸园</title>
-  
-
-
-
-
-
-
+    <!-- Google Analytics -->
+    
 
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  
-  
-    
-  
+<body>
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/wx794/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">伊甸园</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/wx794/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/about.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/contact.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/wx794/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/wx794/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
 </nav>
 
+<div class="container">
 
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
 
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://wangxiong794.github.io/wx794/2019/06/05/AppTest1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wx794">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/wx794/images/blog-blog.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伊甸园">
-    </span>
-
-    
-      <header class="post-header">
-
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/wx794/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-        
-          <h1 class="post-title" itemprop="name headline">App测试流程及测试点</h1>
-        
+    </div>
+</header>
 
-        <div class="post-meta">
-          <span class="post-time">
+        <section class="main">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T10:58:44+08:00">
-                2019-06-05
-              </time>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/wx794/2019/06/05/AppTest1/">
+                App测试流程及测试点
+            </a>
+        </h1>
+        <div class="post-info">
             
-
+                <span class="date">2019-06-05</span>
             
-
             
-          </span>
-
-          
-
-          
             
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+    </div>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <div class="content">
 
-      
-      
+        <!-- Gallery -->
+        
 
-      
+        <!-- Post Content -->
         <h1 id="1-APP测试基本流程"><a href="#1-APP测试基本流程" class="headerlink" title="1 APP测试基本流程"></a>1 APP测试基本流程</h1><h2 id="1-1流程图"><a href="#1-1流程图" class="headerlink" title="1.1流程图"></a>1.1流程图</h2><p><img src="https://i.loli.net/2019/06/05/5cf78169bba4354407.png" alt="流程图"></p>
 <h3 id="1-2测试周期"><a href="#1-2测试周期" class="headerlink" title="1.2测试周期"></a>1.2测试周期</h3><p>测试周期可按项目的开发周期来确定测试时间，一般测试时间为两三周（即15个工作日），根据项目情况以及版本质量可适当缩短或延长测试时间。正式测试前先向主管确认项目排期。</p>
 <h3 id="1-3测试资源"><a href="#1-3测试资源" class="headerlink" title="1.3测试资源"></a><strong>1.3测试资源</strong></h3><p>测试任务开始前，检查各项测试资源。<br>产品功能需求文档；<br>产品原型图；<br>产品效果图；<br>行为统计分析定义文档；<br>测试设备（ios3.1.3-ios5.0.1；Android1.6-Android4.0；Winphone7.1及以上；Symbian v3/v5/Nokia Belle等）；<br>        其他</p>
@@ -340,376 +205,193 @@
 <h3 id="2-12接口测试"><a href="#2-12接口测试" class="headerlink" title="2.12接口测试"></a><strong>2.12接口测试</strong></h3><p>服务端一般会提供JSON格式的数据给客户端，所以我们在服务端需要进行接口测试，确保服务端提供的接口并转换的JSON内容正确，对分支、异常流有相应的返回值。此块测试可以采用itest框架进行测试。最方便的是采用httpclient进行接口测试。<br>进行服务端测试时，需要开发提供一份接口文档。</p>
 <h3 id="2-13客户端数据库测试"><a href="#2-13客户端数据库测试" class="headerlink" title="2.13客户端数据库测试"></a><strong>2.13客户端数据库测试</strong></h3><p>1）一般的增、删、改、查测试。<br>2） 当表不存在时是否能自动创建，当数据库表被删除后能否再自建，数据是否还能自动从服务端中获取回来并保存。<br>3） 在业务需要从服务端取回数据保存到客户端的时候，客户端能否将数据保存到本地。<br>4） 当业务需要从客户端取数据时，检查客户端数据存在时，app数据是否能自动从客户端数据中取出，还是仍然会从服务器端获取？检查客户端数据不存在时，app数据能否自动从服务器端获取到并保存到客户端<br>5） 当业务对数据进行了修改、删除后，客户端和服务端是否会有相应的更新。 </p>
 
-      
     </div>
-    
-    
-    
 
     
 
     
-
-    
-
-    <footer class="post-footer">
-      
         <div class="post-tags">
-          
-            <a href="/wx794/tags/App测试/" rel="tag"># App测试</a>
-          
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/wx794/tags/App测试/">#App测试</a>
         </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/wx794/2019/06/04/gametest/" rel="next" title="MMORPG游戏测试流程">
-                <i class="fa fa-chevron-left"></i> MMORPG游戏测试流程
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/wx794/2019/06/05/HTWFAIP/" rel="prev" title="舔狗自救指南">
-                舔狗自救指南 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
 
-      
+    <!-- Comments -->
+    
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/wx794/images/blog-blog.jpg" alt="wx794">
-            
-              <p class="site-author-name" itemprop="name">wx794</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/wx794/archives/">
-              
-                  <span class="site-state-item-count">11</span>
-                  <span class="site-state-item-name">日志</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/wx794/tags/index.html">
-                  <span class="site-state-item-count">6</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-APP测试基本流程"><span class="nav-number">1.</span> <span class="nav-text">1 APP测试基本流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1流程图"><span class="nav-number">1.1.</span> <span class="nav-text">1.1流程图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2测试周期"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.2测试周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3测试资源"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.3测试资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4日报及产品上线报告"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.4日报及产品上线报告</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-App测试点"><span class="nav-number">1.2.</span> <span class="nav-text">2 App测试点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1安全测试"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1安全测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-1软件权限"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">2.1.1软件权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-2安装与卸载安全性"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.1.2安装与卸载安全性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-3数据安全性"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">2.1.3数据安全性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-4通讯安全性"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">2.1.4通讯安全性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-5人机接口安全性"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">2.1.5人机接口安全性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2安装、卸载测试"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2安装、卸载测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1安装"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">2.2.1安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2卸载"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.2.2卸载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-UI测试"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 UI测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1导航测试"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">2.3.1导航测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2图形测试"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2.3.2图形测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3内容测试"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">2.3.3内容测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4功能测试"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.4功能测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-1运行"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">2.4.1运行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-2应用的前后台切换"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">2.4.2应用的前后台切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-3免登录"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">2.4.3免登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-4数据更新"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">2.4.4数据更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-5离线浏览"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">2.4.5离线浏览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-6-App更新"><span class="nav-number">1.2.4.6.</span> <span class="nav-text">2.4.6 App更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-7定位、照相机服务"><span class="nav-number">1.2.4.7.</span> <span class="nav-text">2.4.7定位、照相机服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-8时间测试"><span class="nav-number">1.2.4.8.</span> <span class="nav-text">2.4.8时间测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-9-PUSH测试"><span class="nav-number">1.2.4.9.</span> <span class="nav-text">2.4.9 PUSH测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5性能测试"><span class="nav-number">1.2.5.</span> <span class="nav-text">2.5性能测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6交叉事件测试"><span class="nav-number">1.2.6.</span> <span class="nav-text">2.6交叉事件测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7兼容测试"><span class="nav-number">1.2.7.</span> <span class="nav-text">2.7兼容测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8回归测试"><span class="nav-number">1.2.8.</span> <span class="nav-text">2.8回归测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9升级、更新测试"><span class="nav-number">1.2.9.</span> <span class="nav-text">2.9升级、更新测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-10用户体验测试"><span class="nav-number">1.2.10.</span> <span class="nav-text">2.10用户体验测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-11-硬件环境测试"><span class="nav-number">1.2.11.</span> <span class="nav-text">2.11 硬件环境测试</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-11-1手势操作测试"><span class="nav-number">1.2.11.1.</span> <span class="nav-text">2.11.1手势操作测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-11-2网络环境"><span class="nav-number">1.2.11.2.</span> <span class="nav-text">2.11.2网络环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-11-3服务器宕机或出现404、502等情况下的测试"><span class="nav-number">1.2.11.3.</span> <span class="nav-text">2.11.3服务器宕机或出现404、502等情况下的测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-12接口测试"><span class="nav-number">1.2.12.</span> <span class="nav-text">2.12接口测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-13客户端数据库测试"><span class="nav-number">1.2.13.</span> <span class="nav-text">2.13客户端数据库测试</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
+</div>
         </section>
-      <!--/noindex-->
-      
-
-      
 
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">wx794</span>
-
-  
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/06/07/loadstudy1/">性能测试之HP LoadRunner</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/06/06/nkyExperience/">内控易项目</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/06/06/python1/">21分钟入门python</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/06/06/Webtest2/">Web通用测试方向</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:test@example.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/wx794/js/main.js"></script>
+
+<!-- Disqus Comments -->
 
 
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/wx794/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/wx794/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/wx794/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/wx794/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/wx794/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/wx794/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/wx794/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/wx794/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/wx794/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/wx794/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/wx794/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
+
 </html>
