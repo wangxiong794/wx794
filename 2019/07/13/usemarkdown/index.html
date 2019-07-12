@@ -218,15 +218,48 @@
 <li><input disabled type="checkbox"> 计划任务</li>
 <li><input checked disabled type="checkbox"> 完成任务</li>
 </ul>
-<h2 id="创建一个表格"><a href="#创建一个表格" class="headerlink" title="创建一个表格"></a>创建一个表格</h2><p>一个简单的表格是这么创建的：<br>| 项目 | Value |<br>| —- | —– |<br>| 电脑 | $1600 |<br>| 手机 | $12   |<br>| 导管 | $1    |</p>
-<h3 id="设定内容居中、居左、居右"><a href="#设定内容居中、居左、居右" class="headerlink" title="设定内容居中、居左、居右"></a>设定内容居中、居左、居右</h3><p>使用<code>:---------:</code>居中<br>使用<code>:----------</code>居左<br>使用<code>----------:</code>居右<br>|     第一列     |         第二列 | 第三列         |<br>| :————: | ————-: | :————- |<br>| 第一列文本居中 | 第二列文本居右 | 第三列文本居左 |</p>
+<h2 id="创建一个表格"><a href="#创建一个表格" class="headerlink" title="创建一个表格"></a>创建一个表格</h2><p>一个简单的表格是这么创建的：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>电脑</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>手机</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>导管</td>
+<td>$1</td>
+</tr>
+</tbody></table>
+<h3 id="设定内容居中、居左、居右"><a href="#设定内容居中、居左、居右" class="headerlink" title="设定内容居中、居左、居右"></a>设定内容居中、居左、居右</h3><p>使用<code>:---------:</code>居中<br>使用<code>:----------</code>居左<br>使用<code>----------:</code>居右</p>
+<table>
+<thead>
+<tr>
+<th align="center">第一列</th>
+<th align="right">第二列</th>
+<th align="left">第三列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">第一列文本居中</td>
+<td align="right">第二列文本居右</td>
+<td align="left">第三列文本居左</td>
+</tr>
+</tbody></table>
 <h3 id="SmartyPants"><a href="#SmartyPants" class="headerlink" title="SmartyPants"></a>SmartyPants</h3><p>SmartyPants将ASCII标点字符转换为“智能”印刷标点HTML实体。例如：<br>|    TYPE   |ASCII                          |HTML<br>|—————-|——————————-|—————————–|<br>|Single backticks|<code>&#39;Isn&#39;t this fun?&#39;</code>            |’Isn’t this fun?’            |<br>|Quotes          |<code>&quot;Isn&#39;t this fun?&quot;</code>            |”Isn’t this fun?”            |<br>|Dashes          |<code>-- is en-dash, --- is em-dash</code>|– is en-dash, — is em-dash|</p>
 <h2 id="创建一个自定义列表"><a href="#创建一个自定义列表" class="headerlink" title="创建一个自定义列表"></a>创建一个自定义列表</h2><dl><dt>Markdown</dt><dd>Text-to-HTML conversion tool</dd></dl><dl><dt>Authors<br>:  John</dt><dd>Luke</dd></dl><h2 id="如何创建一个注脚"><a href="#如何创建一个注脚" class="headerlink" title="如何创建一个注脚"></a>如何创建一个注脚</h2><p>一个具有注脚的文本。<a href="注脚的解释">^2</a></p>
 <h2 id="注释也是必不可少的"><a href="#注释也是必不可少的" class="headerlink" title="注释也是必不可少的"></a>注释也是必不可少的</h2><p>Markdown将文本转换为 HTML。</p>
 <p>*[HTML]:   超文本标记语言</p>
 <h2 id="KaTeX数学公式"><a href="#KaTeX数学公式" class="headerlink" title="KaTeX数学公式"></a>KaTeX数学公式</h2><p>您可以使用渲染LaTeX数学表达式 <a href="https://khan.github.io/KaTeX/" target="_blank" rel="noopener">KaTeX</a>:</p>
-<p>Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall<br>n\in\mathbb N$ 是通过欧拉积分</p>
-<p>$$<br>\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt,.
+<p>Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall<br>n\in\mathbb N$ 是通过欧拉积分<br>$$<br>\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt,.
 $$</p>
 <blockquote>
 <p>你可以找到更多关于的信息 <strong>LaTeX</strong> 数学表达式<a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">here</a>.</p>
