@@ -168,7 +168,7 @@
         <h5 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h5><p>​    自动化测试是测试工程师对系统测试时采用的一种方式，设计并编写自动化脚本完成一系列的测试操作，适用于不轻易修改或不做修改的功能和模块，若程序长期有调整，自动化测试脚本维护成本变高，增加项目的测试成本。常用应用分web应用，PC应用，APP方向，而根据不同的操作系统，自动化测试的工具不同。</p>
 <p>​    内控易项目分web应用和微信企业工作号两部分，微信企业工作号属于内嵌H5应用，因此整个应用可以划分为Web应用。对于Web应用，采用的自动化测试是引用selenium工具包调用浏览器的webdriver（浏览器的内核驱动）方法来满足测试需求。项目持续迭代更新，新增新功能的同时伴有优化改动，故自动化实现的逻辑功能较为简单，方便迭代更新后的修改，降低对自动化代码维护的工作量。</p>
 <h5 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h5><p>​        项目为北京行控科技开发基于阿里云SaaS服务平台开发的行政事业单位内部控制Web应用-内控易，中国第一家专注于校园内控管理的SaaS服务提供商，致力于校园内控管理的持续创新，运用先进的互联网云应用技术，将国家政策与先进的管理思想融合，为学校、幼儿园及教育主管单位提供预算，收支，采购，合同，资产及项目一体化管理的内控管理云服务，帮助学校及主管单位建立智能能高校的内控管理云平台，防范风险的同时提升精细化管理能力。</p>
-<p>​        核心业务包括预算控制，收支管理，采购管理，合同管理，资产管理，项目管理六大板块。为机关领导支持审批，包括Web桌面审批，微信，钉钉审批，从内控角度控制单位的业务类型，业务流程，关键控制文档，三重一大，风险评估，经济科目，组织架构，关键岗位，数字签名，扫脸认证授权等。</p>
+<p>​        核心业务包括预算控制，收支管理，采购管理，合同管理，资产管理，项目管理，人事管理。为机关领导支持审批，包括Web桌面审批，微信审批，钉钉审批，从内控角度控制单位的业务类型，业务流程，关键控制文档，三重一大，风险评估，经济科目，组织架构，关键岗位，数字签名，扫脸认证授权等。</p>
 <h6 id="预算控制"><a href="#预算控制" class="headerlink" title="预算控制"></a>预算控制</h6><p>​        预算控制是企业根据预算规定的收入与支出标准检查和监督各个部门的生产经营活动的控制。其作用是保证各种活动或各个部门在充分达成既定目标，实现利润的过程中对经营资源的利用，使费用支出受到严格有效的约束。其预算内容包括收入预算、支出预算、现金预算、资金支出预算和生产负债预算等方面。</p>
 <p>​        预算控制分两类，一类已执行或执行中的预算称为预算管理，一类为未执行的预算，即未来的预算计划称为预算编制。</p>
 <p>​        预算管理的实际控制分项目和预算项，采用树状结构模式设计，预算项为项目树的末级，为预算项设立归口部门，财政账户，业务类型，业务额度，部门经济科目，功能科目，政府经济科目。系统所有的金钱绑定预算项，在预算项上进行增减，对预算项的调整是由机构/学校的审批流程来决定，可分已核销金额调整单据和可用预算调整单。</p>
@@ -194,6 +194,9 @@
 <p>4、JDK是eclipse的运行基础，点击<a href="https://jingyan.baidu.com/article/6dad5075d1dc40a123e36ea3.html" target="_blank" rel="noopener">安装教程</a>。</p>
 <p>5、eclipse下载，附<a href="https://jingyan.baidu.com/article/d7130635194f1513fcf47557.html" target="_blank" rel="noopener">教程</a>无需安装，安装pydev模块，让eclipse支持编译python，点击<a href="https://www.cnblogs.com/Bonker/p/3584707.html" target="_blank" rel="noopener">安装教程</a>。</p>
 <p>​        若只运行代码或使用其他编译器，前三步操作是不可或缺的，若有疑问，点击<a href="https://wangxiong794.github.io/wx794/about/index.html">联系我</a>。</p>
+<h6 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h6><p>引用unittest框架，暂分两层，后期优化可划分三层结构。一层为底层代码，一层为用例代码。代码可见<a href="https://github.com/wangxiong794/NKYautomation" target="_blank" rel="noopener">Github</a>仅做参考，con_nky包为底层代码，即各个模块的操作事件集合，其中为解决函数不能反复调用问题，common_function文件为公共使用的函数，testcase是存放用例的集合包，用例文件格式固定，不能缺少setup和teardown部门，其中用例的命名必须要以test开头，否则不会执行。运行run_all文件可执行所有的用例，若同时需要用eclipse运行其他的代码，在命令行执行该文件即可。</p>
+<p>三层架构的构思是公共函数包+功能事件包+测试用例包，是非常标准的pythonUI自动化框架，因公司使用此代码仅自己，故未再次推到重做。其中集成用例（run_all）执行文件中有两个函数，为集成执行用例和发送邮件函数。</p>
+<p>系统迭代的更新范围较广较零散，故用例许多会执行不成功，需要进行调整。</p>
 <h6 id="值得记录的东西"><a href="#值得记录的东西" class="headerlink" title="值得记录的东西"></a>值得记录的东西</h6><p>1、在做自动化测试时，同时会做其他的测试工作，弹出浏览器窗口会影响手工工作情况，因此，百度了无界面UI自动化测试（挺矛盾的定义），上代码吧。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">'--headless'</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">'--disable-gpu'</span>)</span><br><span class="line">driver = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
 
@@ -212,7 +215,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"html"</span>).scrollTo(<span class="number">0</span>,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
 
 <p>也能达到拉动效果。</p>
-<p>​        剩下的都是基本操作，现在学习方向是接口自动化的python编写。</p>
+<p>​        剩下的都是基本操作，继续加油鸭~</p>
 
     </div>
 
@@ -255,6 +258,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/wx794/2019/07/13/usemarkdown/">MarkDown基础语法规则</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/wx794/2019/06/28/nkyUIautomationexperience/">内控易自动化测试</a>
             </li>
             
@@ -264,10 +271,6 @@
             
             <li>
                 <a class="footer-post" href="/wx794/2019/06/06/nkyExperience/">内控易项目</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/wx794/2019/06/06/python1/">21分钟入门python</a>
             </li>
             
         </ul>
