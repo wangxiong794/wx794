@@ -1,171 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-    
-        <meta name="description" content="序：为了合理规范测试流程，注意测试要点，撰写此纲要已供新进测试组成员以及在测试自己未接触过的模块时提供参考，做为测试组MMORPG游戏测试流程的最初一步。
-测试前检查及准备—30分钟  检查确保自己的客户端纯净；检查差量包中文件是否和自己纯净客户端中有一模一样的文件；检查确保自己客户单的版本号以及内">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="wx794">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="MMORPG游戏测试流程">
-    
-
-    <!--Open Graph Description-->
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="伊甸园">
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article">
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary">
-    
-
-    <!-- Title -->
-    
-    <title>MMORPG游戏测试流程 - 伊甸园</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/wx794/css/style.css">
-
-    <!-- Google Analytics -->
-    
-
-
+  
+  <title>MMORPG游戏测试流程 | 伊甸园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="序：为了合理规范测试流程，注意测试要点，撰写此纲要已供新进测试组成员以及在测试自己未接触过的模块时提供参考，做为测试组MMORPG游戏测试流程的最初一步。 测试前检查及准备—30分钟  检查确保自己的客户端纯净；检查差量包中文件是否和自己纯净客户端中有一模一样的文件；检查确保自己客户单的版本号以及内网服务器IP地址正确；检查确保内网服务器纯净；检查确保内网服务器连接测试所需的数据库资源；检查服务器">
+<meta name="keywords" content="game测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MMORPG游戏测试流程">
+<meta property="og:url" content="https://wangxiong794.github.io/2019/06/04/gametest/index.html">
+<meta property="og:site_name" content="伊甸园">
+<meta property="og:description" content="序：为了合理规范测试流程，注意测试要点，撰写此纲要已供新进测试组成员以及在测试自己未接触过的模块时提供参考，做为测试组MMORPG游戏测试流程的最初一步。 测试前检查及准备—30分钟  检查确保自己的客户端纯净；检查差量包中文件是否和自己纯净客户端中有一模一样的文件；检查确保自己客户单的版本号以及内网服务器IP地址正确；检查确保内网服务器纯净；检查确保内网服务器连接测试所需的数据库资源；检查服务器">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-13T09:43:34.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MMORPG游戏测试流程">
+<meta name="twitter:description" content="序：为了合理规范测试流程，注意测试要点，撰写此纲要已供新进测试组成员以及在测试自己未接触过的模块时提供参考，做为测试组MMORPG游戏测试流程的最初一步。 测试前检查及准备—30分钟  检查确保自己的客户端纯净；检查差量包中文件是否和自己纯净客户端中有一模一样的文件；检查确保自己客户单的版本号以及内网服务器IP地址正确；检查确保内网服务器纯净；检查确保内网服务器连接测试所需的数据库资源；检查服务器">
+  
+    <link rel="alternate" href="/wx794/atom.xml" title="伊甸园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/wx794/css/style.css">
 </head>
-
-
+</html>
 <body>
-
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
-
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/wx794/">
-                    Home
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/wx794/archives">
-                    Archives
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/wx794/about/index.html">
-                    About
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/wx794/tags">
-                    Tags
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/wx794/categories">
-                    Categories
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/wx794/contact/index.html">
-                    Contact
-                </a>
-            </li>
-            
-        </ul>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/wx794/" id="logo">伊甸园</a>
+      </h1>
+      
     </div>
-</div>
-
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
-
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/wx794/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
         
+          <a class="main-nav-link" href="/wx794/">Home</a>
+        
+          <a class="main-nav-link" href="/wx794/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/wx794/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangxiong794.github.io"></form>
+      </div>
     </div>
+  </div>
 </header>
-
-        <section class="main">
-            
-<div class="post">
-
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/wx794/2019/06/04/gametest/">
-                MMORPG游戏测试流程
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-06-04</span>
-            
-            
-            
-        </div>
-    </div>
-
-    <div class="content">
-
-        <!-- Gallery -->
+      <div class="outer">
+        <section id="main"><article id="post-gametest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/wx794/2019/06/04/gametest/" class="article-date">
+  <time datetime="2019-06-04T07:41:34.000Z" itemprop="datePublished">2019-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
+  
+    <h1 class="article-title" itemprop="name">
+      MMORPG游戏测试流程
+    </h1>
+  
 
-        <!-- Post Content -->
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
         <p>序：为了合理规范测试流程，注意测试要点，撰写此纲要已供新进测试组成员以及在测试自己未接触过的模块时提供参考，做为测试组MMORPG游戏测试流程的最初一步。</p>
 <h2 id="测试前检查及准备—30分钟"><a href="#测试前检查及准备—30分钟" class="headerlink" title="测试前检查及准备—30分钟  "></a>测试前检查及准备—30分钟  </h2><p>检查确保自己的客户端纯净；<br>检查差量包中文件是否和自己纯净客户端中有一模一样的文件；<br>检查确保自己客户单的版本号以及内网服务器IP地址正确；<br>检查确保内网服务器纯净；<br>检查确保内网服务器连接测试所需的数据库资源；<br>检查服务器端地址配置正确版本号正确；</p>
 <h2 id="客户端版本流程测试（已包括各模块的独立测试）"><a href="#客户端版本流程测试（已包括各模块的独立测试）" class="headerlink" title="客户端版本流程测试（已包括各模块的独立测试）"></a>客户端版本流程测试（已包括各模块的独立测试）</h2><p><strong>一：登陆——–0.5H(小时)</strong><br>测试正常的登陆流程；<br>检查账号密码的验证是否正确；<br>检查是否可以重复登陆；<br>检查账号密码的大小写是否通用；<br>检查选择服务器是否能正确登陆；<br>检查多个服务器显示是否正确；<br>检查鼠标点击和回车等快捷键是否都可以登陆；</p>
@@ -190,193 +111,140 @@
 <h2 id="测试结束前最后工作——-1H（小时）"><a href="#测试结束前最后工作——-1H（小时）" class="headerlink" title="测试结束前最后工作——-1H（小时）"></a>测试结束前最后工作——-1H（小时）</h2><p>比对更新差量包和外网是否有重复文件，<br>比对更新文件中是否存在配置错误，<br>记录BUGLIST清晰描述自己的操作步骤。<br>多人配合时记录清楚整理好所有参与测试人员的BUG描述和操作描述。</p>
 <p>注：本纲要所提示的检查部分都是可以拓展的需要测试人员进行临界测试和循环测试的要点；<br>   善有未开发的功能模块没有记录。</p>
 
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="https://wangxiong794.github.io/2019/06/04/gametest/" data-id="cjy8ilqqg000tosuglm60fgzp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/wx794/tags/game测试/">game测试</a></li></ul>
 
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/wx794/2019/06/05/AppTest1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          App测试流程及测试点
+        
+      </div>
+    </a>
+  
+  
+    <a href="/wx794/2019/06/04/WebTest1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Web测试的功能点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
     
 
+  
     
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/wx794/tags/game测试/">#game测试</a>
-        </div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/App测试/">App测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/MarkDown/">MarkDown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/Web测试/">Web测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/Web测试，自动化测试/">Web测试，自动化测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/game测试/">game测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/性能测试/">性能测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/wx794/tags/情感点滴/">情感点滴</a></li></ul>
+    </div>
+  </div>
+
+
+  
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/wx794/tags/App测试/" style="font-size: 15px;">App测试</a> <a href="/wx794/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/wx794/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/wx794/tags/MySQL/" style="font-size: 10px;">MySQL</a> <a href="/wx794/tags/Web测试/" style="font-size: 20px;">Web测试</a> <a href="/wx794/tags/Web测试，自动化测试/" style="font-size: 10px;">Web测试，自动化测试</a> <a href="/wx794/tags/game测试/" style="font-size: 10px;">game测试</a> <a href="/wx794/tags/python/" style="font-size: 10px;">python</a> <a href="/wx794/tags/性能测试/" style="font-size: 10px;">性能测试</a> <a href="/wx794/tags/情感点滴/" style="font-size: 10px;">情感点滴</a>
+    </div>
+  </div>
 
-    <!-- Comments -->
+  
     
-
-</div>
-        </section>
-
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/wx794/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/wx794/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/wx794/archives/2019/04/">April 2019</a></li></ul>
     </div>
-</div>
+  </div>
 
 
-</div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>About</h2>
-                <p>
-                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>Recent Posts</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/wx794/2019/07/13/usemarkdown/">MarkDown基础语法规则</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/wx794/2019/07/12/startmarkdown/">Markdown环境</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/wx794/2019/06/28/nkyUIautomationexperience/">内控易自动化测试</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/wx794/2019/06/07/loadstudy1/">性能测试之HP LoadRunner</a>
-            </li>
-            
-        </ul>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/wx794/2019/07/13/usemarkdown/">MarkDown基础语法规则</a>
+          </li>
+        
+          <li>
+            <a href="/wx794/2019/07/12/startmarkdown/">Markdown环境</a>
+          </li>
+        
+          <li>
+            <a href="/wx794/2019/06/28/nkyUIautomationexperience/">内控易自动化测试</a>
+          </li>
+        
+          <li>
+            <a href="/wx794/2019/06/07/loadstudy1/">性能测试之HP LoadRunner</a>
+          </li>
+        
+          <li>
+            <a href="/wx794/2019/06/06/nkyExperience/">内控易项目</a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
 
-
-
-            
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/?lang=en">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-instagram"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://dribbble.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-dribbble"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://plus.google.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-google-plus"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://www.behance.net/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-behance"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="https://500px.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-500px"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:1334819965@qq.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="\#">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
-                </div>
-            </div>
-        </div>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 wx794<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
+  </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/wx794/" class="mobile-nav-link">Home</a>
+  
+    <a href="/wx794/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-<!-- After footer scripts -->
-
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Tween Max -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Custom JavaScript -->
-<script src="/wx794/js/main.js"></script>
-
-<!-- Disqus Comments -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
+  <link rel="stylesheet" href="/wx794/fancybox/jquery.fancybox.css">
+  <script src="/wx794/fancybox/jquery.fancybox.pack.js"></script>
 
+
+<script src="/wx794/js/script.js"></script>
+
+
+
+  </div>
 </body>
-
 </html>
