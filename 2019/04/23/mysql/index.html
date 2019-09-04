@@ -1,125 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.9.0">
-	<!--编辑标题-->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content>
-    <meta name="keyword" content>
-    <link rel="shortcut icon" href="/wx794/img/favicon.ico">
-    <title>测试伊甸园</title>
+
+    <!--Description-->
+    
+        <meta name="description" content="SQL的基本语法规范
+1、sql不区分大小写，但是习惯上关键字、系统保留字、函数名称大写，表名和列名小写；2、sql使用空格或者回车来分隔每个单词都一样，习惯上每个子句换行，WHERE子句中的每个条件占一行，子查询单独占一行；3、复杂的语句最好加上注释进行说明；4、sql语句中使用分号作为分隔符，系">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="wx794">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="MySQL基础命令大全">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="伊甸园">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>MySQL基础命令大全 - 伊甸园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/wx794/css/aircloud.css">
-    <link rel="stylesheet" href="/wx794/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+    <link rel="stylesheet" href="/wx794/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
 </head>
 
-<body background="https://i.loli.net/2019/06/05/5cf7cb72dfa5699969.jpg">
 
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
+<body>
 
-<div class="index-about">
-    <i>  </i>
-</div>
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
 
-<div class="index-container">
-    
-    <div class="index-left">
-        <div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="https://i.loli.net/2019/06/05/5cf7bdc7c20a714442.jpg"/>
-		</div>
-        <div class="name">
-            <a href="/wx794/about/">wx794</a>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
         <ul>
-            <li >
+            
+            <li class="menu-item">
                 <a href="/wx794/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
+                    Home
                 </a>
             </li>
-            <li >
-                <a href="/wx794/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
+            
+            <li class="menu-item">
                 <a href="/wx794/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
+                    Archives
                 </a>
             </li>
-           
+            
+            <li class="menu-item">
+                <a href="/wx794/about/index.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/contact/index.html">
+                    Contact
+                </a>
+            </li>
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#数据定义语言（DDL）"><span class="toc-text">数据定义语言（DDL）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-CREATE"><span class="toc-text">1.CREATE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数据库-create-database"><span class="toc-text">创建数据库 create database</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数据表-create-table"><span class="toc-text">创建数据表 create table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建存储过程-create-procedure"><span class="toc-text">创建存储过程 create procedure</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ALTER"><span class="toc-text">2.ALTER</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#表结构修改"><span class="toc-text">表结构修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#约束修改"><span class="toc-text">约束修改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-DROP"><span class="toc-text">3.DROP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-TRUNCATE"><span class="toc-text">4.TRUNCATE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据操作语句（DML）"><span class="toc-text">数据操作语句（DML）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、INSERT"><span class="toc-text">1、INSERT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、UPDATE"><span class="toc-text">2、UPDATE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、DELETE"><span class="toc-text">3、DELETE</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据查询语句（DQL）"><span class="toc-text">数据查询语句（DQL）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、select基础"><span class="toc-text">1、select基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）-代表所有列"><span class="toc-text">1）*代表所有列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）查询指定的列"><span class="toc-text">2）查询指定的列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）对查询结果进行运算"><span class="toc-text">3）对查询结果进行运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）空值参与运算得到结果也是空值"><span class="toc-text">4）空值参与运算得到结果也是空值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5）别名"><span class="toc-text">5）别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6）表达式"><span class="toc-text">6）表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7）distinct去重"><span class="toc-text">7）distinct去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8）limit分页查询"><span class="toc-text">8）limit分页查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、限定和排序"><span class="toc-text">2、限定和排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）where子句限定范围"><span class="toc-text">1）where子句限定范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）常用的特殊比较运算"><span class="toc-text">2）常用的特殊比较运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）逻辑运算"><span class="toc-text">3）逻辑运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）运算优先级"><span class="toc-text">4）运算优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5）排序ORDER-BY子句"><span class="toc-text">5）排序ORDER BY子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、单行函数"><span class="toc-text">3、单行函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）数值函数"><span class="toc-text">1）数值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）字符函数"><span class="toc-text">2）字符函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）日期函数"><span class="toc-text">3）日期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）逻辑函数"><span class="toc-text">4）逻辑函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、多表查询"><span class="toc-text">4、多表查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）笛卡尔积"><span class="toc-text">1）笛卡尔积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）多表查询的语法规范"><span class="toc-text">2）多表查询的语法规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）等值连接"><span class="toc-text">3）等值连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4）不等值连接"><span class="toc-text">4）不等值连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5）自连接"><span class="toc-text">5）自连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6）外连接"><span class="toc-text">6）外连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、多行函数"><span class="toc-text">5、多行函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）多行函数"><span class="toc-text">1）多行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）group-BY子句"><span class="toc-text">2）group BY子句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）having子句"><span class="toc-text">3）having子句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、子查询"><span class="toc-text">6、子查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1）单行子查询"><span class="toc-text">1）单行子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2）多行子查询"><span class="toc-text">2）多行子查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3）多列子查询"><span class="toc-text">3）多列子查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、集合操作"><span class="toc-text">7、集合操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据控制语句（DCL）"><span class="toc-text">数据控制语句（DCL）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事物控制语句（TCL）"><span class="toc-text">事物控制语句（TCL）</span></a></li></ol>
-</div>
-    
 </div>
 
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
 
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/wx794/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/wx794/2019/04/23/mysql/">
+                MySQL基础命令大全
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-23</span>
+            
+            
+            
         </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
-        
-
-
-<div class="post-container">
-    <div class="post-title">
-        MySQL基础命令大全
     </div>
 
-    <div class="post-meta">
-        <span class="attr">Post：<span>2019-04-23 16:31:13</span></span>
+    <div class="content">
+
+        <!-- Gallery -->
         
-        <span class="attr">Tags：/
-        
-        <a class="tag" href="/wx794/tags/#MySQL" title="MySQL">MySQL</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+
+        <!-- Post Content -->
         <p>SQL的基本语法规范</p>
 <p>1、sql不区分大小写，但是习惯上关键字、系统保留字、函数名称大写，表名和列名小写；<br>2、sql使用空格或者回车来分隔每个单词都一样，习惯上每个子句换行，WHERE子句中的每个条件占一行，子查询单独占一行；<br>3、复杂的语句最好加上注释进行说明；<br>4、sql语句中使用分号作为分隔符，系统读取到分号才会执行语句。</p>
 <h1 id="数据定义语言（DDL）"><a href="#数据定义语言（DDL）" class="headerlink" title="数据定义语言（DDL）"></a>数据定义语言（DDL）</h1><p>​    DDL是用于描述数据库中要存储的现实世界实体的语言，主要是用在定义或改变结构，数据类型，表之间的链接和约束等初始化工作上，大多在建立表时使用。</p>
@@ -496,42 +542,193 @@ select deptno,count(<em>) from emp<br>where count(</em>) &gt; 5<br>group by dept
 <p>COMMIT; #提交<br>ROLLBACK; #回滚</p>
 <p>DDL语句都是自动提交的，并且不能关闭</p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
+    </div>
 
-        <div id="lv-container">
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/wx794/tags/MySQL/">#MySQL</a>
         </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
 
     </div>
 </div>
 
-    </div>
+
 </div>
 
-<footer class="footer">
-    <div class="list-inline text-center">   
-	GitHub友链：<a href="https://github.com/wangxiong794">Dr.xiong</a>--Email：<a>1334819965@qq.com</a></div>
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/08/28/WageCalculate/">教师工资计算</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/08/23/try-novel/">往生</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/08/21/run/">Untitled</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/07/13/usemarkdown/">MarkDown基础语法规则</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:1334819965@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/wx794/js/main.js"></script>
+
+<!-- Disqus Comments -->
 
 
 
 </body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = ""
-    window.hexo_root = "/wx794/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/wx794/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
 
 </html>
