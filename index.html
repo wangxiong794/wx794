@@ -142,11 +142,39 @@
         
 	</div>
 	<div>
-	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=52 src="//music.163.com/outchain/player?type=0&id=2847331031&auto=1&height=32"></iframe>
+	//<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=52 src="//music.163.com/outchain/player?type=0&id=2847331031&auto=1&height=32"></iframe>
 	</div>
 </header>
 
         <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/wx794/2019/11/20/run/">
+                那些年靠着坑蒙拐骗做测试的日子
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-20</span>
+            
+            
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>​        测试之道其路漫漫而修远兮，吾将上下而求索。上需敷衍产品，下得折腾开发，写好报告，忽悠领导，实乃生存之道。</p>
+<p>​        懵懂无知少年时，离开博文峰，内荐面向工厂燃气表测试，纯技术派老领导任关卡人，慈祥又热心，聊得热火朝天，心中觉得甚好，已有留存之心。然包食住于厂，周无人烟，薪资三千，怒火中生，无处可发，积火成怨，妄浇于博，奈力不从心，焦头烂额。间隔三日，面于高新，亦也高薪，但需奔柬，亦包食住，工薪八千，高新五险，三月半假，如此极好。遥想当年种菜，非君之亲，不得核心，仅作狗托，心存不甘，偷鱼摸虾，落魄逃柬，铩羽而归，心存执念，回国深造，企图凯旋。而后面与九里，乃内控易是也，工薪四千，本不考虑。然博不放柬，几经辗转，回归九里，悠闲又难以言表。上班半年，妄欲涨文，谈终为绝，葱葱岁月，一年已到，工时变长，工资不涨，日拥过日。用例足千条，缺陷近千个，倒腾服务器，熟练自动化。</p>
+
+        </div>
+    
+
+</div>
             
                 
 <div class="post">
@@ -230,8 +258,12 @@
 <p><img src="https://i.loli.net/2019/08/29/4XzYf1qP2GFvMOh.png" alt="标准工资项.png"></p>
 <p>​        人事工资管理产品模块最终设计功能分为：工资方案、人员管理、计划工作量管理、实际工作量变更、考勤统计、加班统计、课外辅导补助、工资核算以及基础数据设置。</p>
 <p>​        <img src="https://i.loli.net/2019/08/29/JDsQZYyqCSjFtL8.png" alt="内控易人事管理功能.png"></p>
-<h3 id="工资方案"><a href="#工资方案" class="headerlink" title="工资方案"></a>工资方案</h3><p>​        以北京市八一学校的工资项为参考，结合内控手册，系统给出一条默认的工资方案，方便使用。</p>
-<h4 id="填写基本信息"><a href="#填写基本信息" class="headerlink" title="填写基本信息"></a>填写基本信息</h4>
+<h3 id="工资方案"><a href="#工资方案" class="headerlink" title="工资方案"></a>工资方案</h3><p>​        以北京市八一学校的工资项为例，结合内控手册，列举详细工资项及详细算法，算法支持自定义，系统内置两套默认工资方案以作参考，可在此基础上进行更改优化。方案具体细分：基本信息、金额标准、工资项目、考勤规则四个步骤。</p>
+<p>​        基本信息主要是选择计算上月，当月，还是下月工资的计算，适应不同机构工资发放时机不一致的情况，八一学院是本月发下月工资，例如当前8月10日发工资，发的是9月份的工资，8月工资在7月已经下发，8月份工资上的缺勤加班则算在9月的工资单上。</p>
+<p>​        金额标准是工资计算的基础，如同为公立学院，高级教师的津贴标准是一样的，但两自一包的学院以及私立院校标准不一定相同，因此跟基础数据联动自定义金额标准。基础数据自定义枚举值，如学科（语文、数学、英语），在金额标准就可设定学科的补贴，不同职位的上课补贴等，支持Excel导入数据。</p>
+<p>​        工资项目即细化人员的工资来源，即工资条展示人员的各项工资，设计到每一项的计算方式，如根据课时数与教案数算出教师课时费，行政课时费，管理课时费等，支持Excel导入数据。分基本信息字段、工资相关信息字段、工作量相关、考勤相关四种公式类型。基本信息字段则由标准金额带出金额与相关系数得到工资；工资相关信息字段则由已经由基本信息算出的工资进行二次计算，得到相应补贴或扣减；工作量相关是受工作量影响的一些工资项，在每个学期开始，老师均会上报本年的计划工作量，如果在实际工作中没有按计划工作量进行上课，则根据实际工作量进行增加或扣减；考勤相关则为前三项的基础上进行扣减，是计算上月的扣减，而非当月计算工资，即如8月份发工资时，前三项为9月份应得工资，最后一项为7月份的考勤增加或扣减金额。</p>
+<p>​        考勤规则的设定公式的计算时在工资项的基础上进行参数变动，产生的差异值计算，老师工资为本月发下月，有加班与考勤的影响，因此存在多退少补的情况，因此公式较为复杂，不经过培训，实施该产品有一定的难度。</p>
+<h4 id="人员档案"><a href="#人员档案" class="headerlink" title="人员档案"></a>人员档案</h4>
         </div>
     
 
@@ -259,35 +291,9 @@
         <div class="content">
             <h4 id="第一章-愤青"><a href="#第一章-愤青" class="headerlink" title="第一章 愤青"></a>第一章 愤青</h4><p>​        发霉的房间端坐着皱眉的青年，床边轮循播放着小视频，在流量时代沉迷小视频似乎成为现代青年人头号杀手，网上虽有倡议拒绝小视频的言论，随时间奔流消散，叶往生便为此惆怅。臧克家在1949年纪念鲁迅提到“有的人活着，他已经死了；有的人死了，他还活着。“，活着到底有什么意义，在和平无忧的环境，似乎这成为年青一代的终极问题。</p>
 <p>​        “咚..咚.咚”一慢两快的敲门声响起，来人身材略微高大却以试探性语气询问道“想的怎么样？这样对你我都有好处，你的签证还有20天‘。“我可以答应你，但需要把我妹送到公立医院，放心我不会透露任何信息”。</p>
-<p>​        “哈哈，很好，出来把合同签了，只要不作出不出格你不吃亏。对了，自我介绍一下，我是你的直属上司，我叫王建国，下面人叫我国哥，你也这么称呼。”</p>
-<p>​        国哥拿出手中的合同铺在板床上，上面写着劳动合同，内容记录着在未来20天成为华谋搬家公司的临时工，期满支付工资，包吃包住。其中有一条附加项是合同期间内，任凭安排，若发生意外事故造成伤害，公司全额补偿，最终解释权归华谋所有。签完合同国哥带着往生来到培训室，里面坐着清一色的年轻人，纷纷看着眼前这沉静的新人，似乎略有不同</p>
+<p>​        “哈哈，很好，出来把合同签了，只要不作出不出格你不吃亏。对了，自我介绍一下，我是你的直属上司，我叫王建国，下面人叫我国哥，你也这么称呼。”，什么？国歌？这老小子有问题啊。</p>
+<p>​        国哥拿出手中的合同铺在板床上，上面写着劳动合同，内容记录着在未来20天成为华谋搬家公司的临时工，期满支付工资，包吃包住。其中有一条附加项是合同期间内，任凭安排，若发生意外事故造成伤害，公司全额补偿，最终解释权归华谋所有。签完合同国哥带着往生来到培训室，里面坐着清一色的年轻人，纷纷看着眼前这沉静的新人，似乎略有不同。</p>
 
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/wx794/2019/08/21/run/">
-                Untitled
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-21</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            
         </div>
     
 
@@ -442,8 +448,8 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/wx794/2019/07/12/startmarkdown/">
-                Markdown环境
+            <a href="/wx794/2019/07/12/python2/">
+                简单的饮料购买
             </a>
         </h1>
         <div class="post-info">
@@ -457,7 +463,9 @@
 
     
         <div class="content">
-            
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">drinks = &#123;<span class="string">"1"</span>:<span class="number">1</span>,<span class="string">"2"</span>:<span class="number">3.5</span>,<span class="string">"3"</span>:<span class="number">2</span>,<span class="string">"4"</span>:<span class="number">4.5</span>&#125;</span><br><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    choice = input(<span class="string">"1:矿泉水 2:可乐 3:娃哈哈 4:脉动 q:退出  请选择: "</span>)</span><br><span class="line">    <span class="keyword">if</span> choice <span class="keyword">in</span> drinks.keys():</span><br><span class="line">        total+=drinks[choice]</span><br><span class="line">    <span class="keyword">elif</span> choice==<span class="string">"q"</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"不存在该选项,请重新选择"</span>)</span><br><span class="line">print(<span class="string">"你已选择了&#123;0&#125;元的饮料，需支付&#123;1&#125;元"</span>.format(total,total))</span><br><span class="line">toubi = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    money = input(<span class="string">"请投入1 5 10元面值的硬币或纸币,按q退出投币！ "</span>)</span><br><span class="line">    <span class="keyword">if</span> money==<span class="string">"1"</span> <span class="keyword">or</span> money==<span class="string">"5"</span> <span class="keyword">or</span> money==<span class="string">"10"</span>:</span><br><span class="line">        toubi+=int(money)</span><br><span class="line">        <span class="keyword">if</span> toubi&gt;total:</span><br><span class="line">            print(<span class="string">"你购买了&#123;0&#125;元的商品，已支付&#123;1&#125;元，找零&#123;2&#125;！"</span>.format(total,toubi,toubi-total))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">elif</span> toubi&lt;total:</span><br><span class="line">            print(<span class="string">"你购买了&#123;0&#125;元的商品，已支付&#123;1&#125;元，还需支付&#123;2&#125;元！"</span>.format(total,toubi,total-toubi))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"你购买了&#123;0&#125;元的商品，已支付&#123;1&#125;元！"</span>.format(total,toubi))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> money==<span class="string">"q"</span>:</span><br><span class="line">        print(<span class="string">"退出投币"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"你输入的选项不存在"</span>)</span><br></pre></td></tr></table></figure>
+
+
         </div>
     
 
@@ -588,7 +596,7 @@
 
     
         <div class="content">
-            <h4 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h4><p>​        项目为北京行控科技开发基于阿里云SaaS服务平台开发的行政事业单位内部控制Web应用-内控易，中国第一家专注于校园内控管理的SaaS服务提供商，致力于校园内控管理的持续创新，运用先进的互联网云应用技术，将国家政策与先进的管理思想融合，为学校、幼儿园及教育主管单位提供预算，收支，采购，合同，资产及项目一体化管理的内控管理云服务，帮助学校及主管单位建立智能能高校的内控管理云平台，防范风险的同时提升精细化管理能力。<img src="https://i.loli.net/2019/06/10/5cfe5d179252552919.png" alt="审批桌面 - 内控易.png" title="审批桌面 - 内控易.png"></p>
+            <h4 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h4><p>​        项目为北京行控科技开发基于阿里云SaaS服务平台开发的行政事业单位内部控制Web应用-内控易，致力于校园内控管理的持续创新，运用先进的互联网云应用技术，将国家政策与先进的管理思想融合，为学校、幼儿园及教育主管单位提供预算，收支，采购，合同，资产及项目一体化管理的内控管理云服务，帮助学校及主管单位建立智能能高校的内控管理云平台，防范风险的同时提升精细化管理能力。<img src="https://i.loli.net/2019/06/10/5cfe5d179252552919.png" alt="审批桌面 - 内控易.png" title="审批桌面 - 内控易.png"></p>
 <p>核心业务包括预算控制，收支管理，采购管理，合同管理，资产管理，项目管理，人事管理。为机关领导支持审批，包括Web桌面审批，微信审批，钉钉审批，从内控角度控制单位的业务类型，业务流程，关键控制文档，三重一大，风险评估，经济科目，组织架构，关键岗位，数字签名，扫脸认证授权等。</p>
 <h6 id="预算控制"><a href="#预算控制" class="headerlink" title="预算控制"></a>预算控制</h6><p>​        预算控制是企业根据预算规定的收入与支出标准检查和监督各个部门的生产经营活动的控制。其作用是保证各种活动或各个部门在充分达成既定目标，实现利润的过程中对经营资源的利用，使费用支出受到严格有效的约束。其预算内容包括收入预算、支出预算、现金预算、资金支出预算和生产负债预算等方面。</p>
 <p>​        预算控制分两类，一类已执行或执行中的预算称为预算管理，一类为未执行的预算，即未来的预算计划称为预算编制。</p>
@@ -628,7 +636,8 @@
 <p>​        UI自动化测试，采用的是基于Python+Selenium+Webdriver上，套用unittest框架，引用BeautifulReport生成HTML测试报告。实现过程中遇到2个棘手问题，一是浏览器的附件上传，二是将测试报告以邮件发送到指定邮箱。</p>
 <p>​        附件上传有困难的原因是，Selenium模拟用户只能操作浏览器，而附件上传会出Windows的系统弹窗选文件，Python难以直接操作。后来采用<a href="https://www.autoitscript.com/site/autoit/downloads/" target="_blank" rel="noopener">autoIT v3</a>编写脚本，操作Windows弹框，再转换成exe执行文件，Python调用该执行文件即可完成上传附件。</p>
 <p>​        发送邮箱仿佛瞎子过河，度娘的文档大多都不适用，移植到本地运行，查看错误报告，反复调试终成功。采用QQ邮箱开启smtp服务进行代发邮件，Python调用smtplib包完成需求，操作详情可参考<a href="https://www.runoob.com/python/python-email.html" target="_blank" rel="noopener">菜鸟教程</a>。</p>
-<h4 id="项目中测试工作的成果"><a href="#项目中测试工作的成果" class="headerlink" title="项目中测试工作的成果"></a>项目中测试工作的成果</h4><h4 id="项目对测试的考核"><a href="#项目对测试的考核" class="headerlink" title="项目对测试的考核"></a>项目对测试的考核</h4><p>​        对于项目经理而言，测试考核可分为效率和质量，效率是指测试的周期，质量指上线后的BUG数量。效率可以考核测试对项目的熟悉程度，测试的经验是否满足项目需求，能够按期或超期完成测试工作，并完成相关统计，如提出BUG数，开发负责的BUG数，可做测试的绩效参考，亦可做开发的质量评价依据。</p>
+<h4 id="项目中测试工作的成果"><a href="#项目中测试工作的成果" class="headerlink" title="项目中测试工作的成果"></a>项目中测试工作的成果</h4><p>​        项目在职期间缺陷累计数量1000+，用例1000+条，完成必需的UI自动化测试脚本</p>
+<h4 id="项目对测试的考核"><a href="#项目对测试的考核" class="headerlink" title="项目对测试的考核"></a>项目对测试的考核</h4><p>​        对于项目经理而言，测试考核可分为效率和质量，效率是指测试的周期，质量指上线后的BUG数量。效率可以考核测试对项目的熟悉程度，测试的经验是否满足项目需求，能够按期或超期完成测试工作，并完成相关统计，如提出BUG数，开发负责的BUG数，可做测试的绩效参考，亦可做开发的质量评价依据。</p>
 <p>​        作为测试想要涨薪，效率和质量都得满足项目经理的要求，效率在迭代平静期，可以提出的BUG数量做考核，在测试任务的繁重情况下，按期完成测试任务，富有责任心加班加点跟踪BUG。加班虽有点做作，但领导对主动要求加班的人员，还是挺赞赏的。测试负责软件质量的把控，想要涨薪，就得拿出自己对软件责任心与热心态度，热心态度做到像这个软件是自己的私有物一样，坚持让它走向完美，让使用他的客户没有任何问题。</p>
 <p>​        其次，测试上游下游的评价对测试很重要，若测试为最后一关，则用户领导对软件使用产生的线上BUG数量，若测试完成后还需要产品验收，则产品验收人员对于测试的评价对于测试的考核尤为重要。另外是开发对于测试的评价，开发对测试的评价可是缺陷描述是否清晰，缺陷追踪是否合理很重要，领导可以根据开发对测试的评价，来考核测试的经验，对业务的测试能力。</p>
 <p>​        最后，测试对软件负责质量把关，面对不合理的需求，需要解决的缺陷，该表示出自己强硬的态度就该展示。负责产品质量把关，不是一句话的事情，认真负责是基础，热心的态度是加分项，技术虽是加分项，从领导的角度看，测试对于技术不是刚需，如性能测试，接口测试，开发本身就会。当然也有些基础性的知识很重要，测试流程，测试工具，基本常识如SQL语句，通信规则，Windows/Linux命令，项目管理等是从事IT行业的底层知识。</p>
@@ -682,6 +691,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/wx794/2019/11/20/run/">那些年靠着坑蒙拐骗做测试的日子</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/wx794/2019/09/19/request1/">获取某学习网站的人员课程</a>
             </li>
             
@@ -691,10 +704,6 @@
             
             <li>
                 <a class="footer-post" href="/wx794/2019/08/28/WageCalculate/">教师工资计算</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/wx794/2019/08/23/try-novel/">往生</a>
             </li>
             
         </ul>
