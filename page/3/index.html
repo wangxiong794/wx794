@@ -532,11 +532,13 @@
 <p>#1000到2000之间显示小资</p>
 <p>#1000以下矮矬穷<br>SELECT *,IF(sal&gt;=3000,’高富帅’,IF(sal&gt;=2000,’中产’,IF(sal&gt;=1000,’小资’,’矮矬穷’))) FROM emp;</p>
 <p>#ifnull(x,y) 如果x的值为空，则返回y，如果x不为空则返回x<br>SELECT <em>,12</em>(sal+IFNULL(comm,0)) nianshouru FROM emp;</p>
-<p>/*<br>case x<br>when value1 then result1<br>when value2 then result2<br>…<br>when valueN then resultN<br>else resultN+1<br>end</p>
+<p>/*
+case x<br>when value1 then result1<br>when value2 then result2<br>…<br>when valueN then resultN<br>else resultN+1<br>end</p>
 <p>判断x的值，如果x=value1则返回result1<br>              如果x=value2则返回result2<br>              ……<br>              如果x=valueN则返回resultN<br>              如果以上值都不满足返回resultN+1<br>*/</p>
 <p>#根据员工不同的职位涨不同幅度的工资</p>
 <p>#clerk涨10%，salesman涨15%</p>
-<p>#manager涨20%，其他人不变<br>SELECT <em>,<br>CASE job<br>WHEN ‘CLERK’ THEN sal</em>1.1<br>WHEN ‘SALESMAN’ THEN sal<em>1.15<br>WHEN ‘MANAGER’ THEN sal</em>1.2<br>ELSE sal<br>END addsal<br>FROM emp;</p>
+<p>#manager涨20%，其他人不变<br>SELECT <em>,
+CASE job<br>WHEN ‘CLERK’ THEN sal</em>1.1<br>WHEN ‘SALESMAN’ THEN sal<em>1.15<br>WHEN ‘MANAGER’ THEN sal</em>1.2<br>ELSE sal<br>END addsal<br>FROM emp;</p>
 <h2 id="4、多表查询"><a href="#4、多表查询" class="headerlink" title="4、多表查询"></a>4、多表查询</h2><h3 id="1）笛卡尔积"><a href="#1）笛卡尔积" class="headerlink" title="1）笛卡尔积"></a>1）笛卡尔积</h3><p>#查询员工的信息和其所在部门的信息<br>SELECT * FROM emp;<br>SELECT * FROM dept;</p>
 <p>SELECT ename,job,sal,dname,loc FROM emp,dept;</p>
 <p>#集合A中的所有元素和集合B中的所有元素，组成的有序对成为笛卡尔积，记作A×B</p>
@@ -575,7 +577,8 @@
 <p>2.查询工资等级为3/4/5级的员工姓名，工资，工资等级<br>SELECT e.ename,e.sal,s.grade<br>FROM emp e,salgrade s<br>WHERE e.sal BETWEEN s.losal AND s.hisal<br>AND s.grade &gt; 2;</p>
 <p>3.显示职位是CLERK的员工姓名，工资，工资等级，部门名称<br>SELECT e.ename,e.job,e.sal,s.grade,d.dname<br>FROM emp e,dept d,salgrade s<br>WHERE e.deptno = d.deptno<br>AND e.sal BETWEEN s.losal AND s.hisal<br>AND e.job = ‘CLERK’;</p>
 <p>4.查询emp表，显示员工姓名及其经理的姓名，没有经理的员工也需要显示<br>SELECT w.ename,m.ename manager<br>FROM emp w LEFT OUTER JOIN emp m<br>ON w.mgr = m.empno;</p>
-<p>5.列出EMP表中部门名称和这些部门的员工信息，同时列出那些没有员工的部门<br>SELECT d.dname,e.*<br>FROM emp e RIGHT OUTER JOIN dept d<br>ON e.deptno = d.deptno;</p>
+<p>5.列出EMP表中部门名称和这些部门的员工信息，同时列出那些没有员工的部门<br>SELECT d.dname,e.*
+FROM emp e RIGHT OUTER JOIN dept d<br>ON e.deptno = d.deptno;</p>
 <h2 id="5、多行函数"><a href="#5、多行函数" class="headerlink" title="5、多行函数"></a>5、多行函数</h2><h3 id="1）多行函数"><a href="#1）多行函数" class="headerlink" title="1）多行函数"></a>1）多行函数</h3><p>#针对多行数据进行运算，只得到一个结果，就是多行函数</p>
 <p>#又称为分组函数，或聚合函数</p>
 <p>#sum() 求和<br>SELECT SUM(sal) FROM emp;</p>
@@ -597,7 +600,8 @@
 <p>#查询每个职位的人数<br>SELECT job,COUNT(*) FROM emp<br>GROUP BY job;</p>
 <p>#可以多列分组</p>
 <p>#查询每个部门各个职位的最低工资<br>SELECT deptno,job,MIN(sal) FROM emp<br>GROUP BY deptno,job;</p>
-<h3 id="3）having子句"><a href="#3）having子句" class="headerlink" title="3）having子句"></a>3）having子句</h3><p>#查询部门人数多于5人的部门编号<br>/*<br>select deptno,count(<em>) from emp<br>where count(</em>) &gt; 5<br>group by deptno;</p>
+<h3 id="3）having子句"><a href="#3）having子句" class="headerlink" title="3）having子句"></a>3）having子句</h3><p>#查询部门人数多于5人的部门编号<br>/*
+select deptno,count(<em>) from emp<br>where count(</em>) &gt; 5<br>group by deptno;</p>
 <p>where子句中不能出现分组函数<br>*/</p>
 <p>#要对分组函数的结果进行限定，使用having子句</p>
 <p>#having必须在group by后面</p>
