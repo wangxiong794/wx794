@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="[TOC]
+序言​    自动化测试是测试工程师对系统测试时采用的一种方式，设计并编写自动化脚本完成一系列的测试操作，适用于不轻易修改或不做修改的功能和模块，若程序长期有调整，自动化测试脚本维护成本变高，增加项目的测试成本。常用应用分web应用，PC应用，APP方向，而根据不同的操作系统，自动化测试">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="wx794">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="内控易自动化测试">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="伊甸园">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>内控易自动化测试 - 伊甸园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/wx794/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/wx794/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/about/index.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/contact/index.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+	<div>
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=2847331031&auto=1&height=90"></iframe>
+	</div>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/wx794/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+	</div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/wx794/2019/06/28/nkyUIautomationexperience/">
+                内控易自动化测试
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-06-28</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>[TOC]</p>
+<h5 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h5><p>​    自动化测试是测试工程师对系统测试时采用的一种方式，设计并编写自动化脚本完成一系列的测试操作，适用于不轻易修改或不做修改的功能和模块，若程序长期有调整，自动化测试脚本维护成本变高，增加项目的测试成本。常用应用分web应用，PC应用，APP方向，而根据不同的操作系统，自动化测试的工具不同。</p>
+<p>​    内控易项目分web应用和微信企业工作号两部分，微信企业工作号属于内嵌H5应用，因此整个应用可以划分为Web应用。对于Web应用，采用的自动化测试是引用selenium工具包调用浏览器的webdriver（浏览器的内核驱动）方法来满足测试需求。项目持续迭代更新，新增新功能的同时伴有优化改动，故自动化实现的逻辑功能较为简单，方便迭代更新后的修改，降低对自动化代码维护的工作量。</p>
+<h5 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h5><p>​        项目为北京行控科技开发基于阿里云SaaS服务平台开发的行政事业单位内部控制Web应用-内控易，中国第一家专注于校园内控管理的SaaS服务提供商，致力于校园内控管理的持续创新，运用先进的互联网云应用技术，将国家政策与先进的管理思想融合，为学校、幼儿园及教育主管单位提供预算，收支，采购，合同，资产及项目一体化管理的内控管理云服务，帮助学校及主管单位建立智能能高校的内控管理云平台，防范风险的同时提升精细化管理能力。</p>
+<p>​        核心业务包括预算控制，收支管理，采购管理，合同管理，资产管理，项目管理，人事管理。为机关领导支持审批，包括Web桌面审批，微信审批，钉钉审批，从内控角度控制单位的业务类型，业务流程，关键控制文档，三重一大，风险评估，经济科目，组织架构，关键岗位，数字签名，扫脸认证授权等。</p>
+<h6 id="预算控制"><a href="#预算控制" class="headerlink" title="预算控制"></a>预算控制</h6><p>​        预算控制是企业根据预算规定的收入与支出标准检查和监督各个部门的生产经营活动的控制。其作用是保证各种活动或各个部门在充分达成既定目标，实现利润的过程中对经营资源的利用，使费用支出受到严格有效的约束。其预算内容包括收入预算、支出预算、现金预算、资金支出预算和生产负债预算等方面。</p>
+<p>​        预算控制分两类，一类已执行或执行中的预算称为预算管理，一类为未执行的预算，即未来的预算计划称为预算编制。</p>
+<p>​        预算管理的实际控制分项目和预算项，采用树状结构模式设计，预算项为项目树的末级，为预算项设立归口部门，财政账户，业务类型，业务额度，部门经济科目，功能科目，政府经济科目。系统所有的金钱绑定预算项，在预算项上进行增减，对预算项的调整是由机构/学校的审批流程来决定，可分已核销金额调整单据和可用预算调整单。</p>
+<p>​        预算编制时对来年的预算规划，分收入编制和支出编制两类，收入编制无需专门上报领导审批，由预算管理员可直接完成。支出编制需要单位长时间的讨论开会决定，分模板编制，一上填报，一上汇总，一下查询，二上填报，二上汇总，二下查询七大模块。预算管理员根据往年各部门的开支，整理来年的预算模板计划，即为模板编制。模板编制成功后，下发各部门，由各部门相关人员进行填报即为一上填报。填报后经大会商讨审批，由预算管理员将个预算的审批情况汇总，统计数据即为一上汇总。各个部门可在一上查询部门的预算审批情况，经过修改不合适的预算项再次填报预算项，即为二上填报。有机关领导相关人员组织二次会议对二上填报进行再审批，由预算管理员汇总即为二上汇总。各个部门的相关人员即可看见来年的部门实际预算情况，并在来年下发为实际预算项的使用与管理。</p>
+<img src="https://s2.ax1x.com/2019/06/30/Z31fpD.png" alt="Z31fpD.png" border="0">
+
+<h6 id="收支管理"><a href="#收支管理" class="headerlink" title="收支管理"></a>收支管理</h6><p>​        行政事业单位支出管理是依据现行财政经济制度规定、有关的行政事业开支标准、批准的行政事业单位预算和其他有关法律法规，对行政事业单位支出的项目、范围和标准等进行规范管理，将行政事业单位的财务行为限定在法律法规许可的范围内，督促各行政事业单位合理、节约使用资金，少花钱多办事，实现单位绩效最大化。行政事业单位收入管理是对行政事业性收费收入,属于政府非税收入的一种。</p>
+<p>​        收入管理通过收费标准单，收费单审批，收入登记单三类单据来控制学校的收入管理，其中收入登记单是最后财务入学校账户的最后一步，因此绑定预算项，只能由财务才能进行操作。</p>
+<p>​        支出管理通过事前经费单和报销单来控制，其中经费单可分会议费，培训费，差旅费，劳务费四大类，报销单除可对事前经费单发起报销外，可对合同及框架协议发起报销，也可直接对预算项发起无申请报销。另外由财务来核销与反核销，统一财务出入账。</p>
+<h6 id="采购管理"><a href="#采购管理" class="headerlink" title="采购管理"></a>采购管理</h6><p>​        采购管理是指对采购业务过程进行组织、实施与控制的管理过程。可分为自行采购和政府采购，需有事前经费申请，方能发起采购，由采购申请单和采购验收单共同控制采购管理，其中包括供应商管理，评审专家的管理。</p>
+<h6 id="合同管理"><a href="#合同管理" class="headerlink" title="合同管理"></a>合同管理</h6><p>​        合同管理是当事人双方或数方确定各自权利和义务关系的协议，虽不等于法律，但依法成立的合同具有法律约束力，工程合同属于经济合同的范畴，受经济和刑法法则的约束，合同管理主要是指项目管理人员根据合同进行工程项目的监督和言理，是法学、经济学理论和管理科学在组织实施合同中的具体运用。</p>
+<p>​        合同的发起依据与事前经费的申请，可分当前年度合同和跨年度合同，控制合同类型及印花税档案号，另外可根据用户的需求制定自己的合同版式。</p>
+<h6 id="资产管理"><a href="#资产管理" class="headerlink" title="资产管理"></a>资产管理</h6><p>​        资产管理业务是指资产管理人根据资产管理合同约定的方式、条件、要求及限制。资产可分固定资产和低值易耗品两类，数据来源可为事前经费单，采购审批单，采购验收单，也可自行生成相关数据。</p>
+<p>​        固定资产分六大模块，资产入库，资产建卡，资产领用，资产退还，资产处置，资产盘点。以及其他的基础数据，产品目录，计量单位，政采目录，资产分类，存放位置。以资产管理员为核心，对固定资产的统一管理。以入库单，领用单，退换单控制使用，采用专业设备对资产卡片的打印和盘点完成对固定资产的实际使用控制。</p>
+<p>​        低值易耗品分入库管理，领用出库，库存管理。相比固定资产，无需资产卡片。但需要期初库存，对库存的拆分，领用退还来控制低值易耗的使用。其数据来源也可来自事前经费单，采购审批单及验收单，亦可自行建立相关信息。</p>
+<h6 id="项目管理"><a href="#项目管理" class="headerlink" title="项目管理"></a>项目管理</h6><p>​        项目管理是满足或超越项目有关各方对项目的要求与期望，所开展的各种计划、组织、领导、控制等方面措施。分项目申报及中标单位通报两类单据进行项目控制。</p>
+<h5 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h5><p>​        内控易自动化测试主要实现系统各类单据的自动生成及审批，包括预算调整单，收费标准单，收费审批单，收入登记单，事前经费单，报销申请单，采购审批单，采购验收单，资产入库单，资产建卡，资产领用单，资产退换单，资产处置单，项目申报单，中标单位通报单，框架协议单，事项申请单，议事会签单。其审批可同意，驳回，撤销，复制，作废，删除，抄送等操作，审批对接微信，可在微信审批，钉钉的审批还在后期研发中。</p>
+<h6 id="测试环境搭建"><a href="#测试环境搭建" class="headerlink" title="测试环境搭建"></a>测试环境搭建</h6><p>​        自动化代码由python编写，采用eclipse的编译器编译，故此环境配置为python+selenium+browser，编译器推荐：eclipse.pydev+JDK</p>
+<p>1、python安装，注意添加系统环境变量（PATH），点击<a href="https://jingyan.baidu.com/article/c45ad29c05c208051653e270.html" target="_blank" rel="noopener">详细安装教程</a>。</p>
+<p>2、browser选择，UI自动化的载体浏览器，建议选Chrome，Firefox，IE浏览器，其他浏览器需自己加载内核驱动。</p>
+<p>以Chrome为例，下载安装Chrome后，下载webdriver并将该文件夹配置环境变量（PATH），点击<a href="http://chromedriver.storage.googleapis.com/index.html" target="_blank" rel="noopener">下载链接</a>，注意webdriver版本与浏览器版本一致，否则会运行失败。其他浏览器点击<a href="https://github.com/mozilla/geckodriver/releases/" target="_blank" rel="noopener">Firefox内核</a>，<a href="http://selenium-release.storage.googleapis.com/index.html" target="_blank" rel="noopener">IE内核</a>。</p>
+<p>3、selenium安装，selenium是python的一个工具包，用于模拟用户在浏览器的交互，命令行 pip install selenium即可。</p>
+<p>4、JDK是eclipse的运行基础，点击<a href="https://jingyan.baidu.com/article/6dad5075d1dc40a123e36ea3.html" target="_blank" rel="noopener">安装教程</a>。</p>
+<p>5、eclipse下载，附<a href="https://jingyan.baidu.com/article/d7130635194f1513fcf47557.html" target="_blank" rel="noopener">教程</a>无需安装，安装pydev模块，让eclipse支持编译python，点击<a href="https://www.cnblogs.com/Bonker/p/3584707.html" target="_blank" rel="noopener">安装教程</a>。</p>
+<p>​        若只运行代码或使用其他编译器，前三步操作是不可或缺的，若有疑问，点击<a href="https://wangxiong794.github.io/wx794/about/index.html">联系我</a>。</p>
+<h6 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h6><p>引用unittest框架，暂分两层，后期优化可划分三层结构。一层为底层代码，一层为用例代码。代码可见<a href="https://github.com/wangxiong794/NKYautomation" target="_blank" rel="noopener">Github</a>仅做参考，con_nky包为底层代码，即各个模块的操作事件集合，其中为解决函数不能反复调用问题，common_function文件为公共使用的函数，testcase是存放用例的集合包，用例文件格式固定，不能缺少setup和teardown部门，其中用例的命名必须要以test开头，否则不会执行。运行run_all文件可执行所有的用例，若同时需要用eclipse运行其他的代码，在命令行执行该文件即可。</p>
+<p>三层架构的构思是公共函数包+功能事件包+测试用例包，是非常标准的pythonUI自动化框架，因公司使用此代码仅自己，故未再次推到重做。其中集成用例（run_all）执行文件中有两个函数，为集成执行用例和发送邮件函数。</p>
+<p>系统迭代的更新范围较广较零散，故用例许多会执行不成功，需要进行调整。</p>
+<h6 id="值得记录的东西"><a href="#值得记录的东西" class="headerlink" title="值得记录的东西"></a>值得记录的东西</h6><p>1、在做自动化测试时，同时会做其他的测试工作，弹出浏览器窗口会影响手工工作情况，因此，百度了无界面UI自动化测试（挺矛盾的定义），上代码吧。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chrome_options = Options()</span><br><span class="line">chrome_options.add_argument(<span class="string">'--headless'</span>)</span><br><span class="line">chrome_options.add_argument(<span class="string">'--disable-gpu'</span>)</span><br><span class="line">driver = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>
+
+<p>其中后4行替代了driver=webdrive.Chrome()。当然若是在class里面，driver替换成self.driver即可。如图，当然用其他浏览器相应的Chrome替换成Firefox即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.options <span class="keyword">import</span> Options</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test_class</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUpClass</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDownClass</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        chrome_options = Options()</span><br><span class="line">        chrome_options.add_argument(<span class="string">'--headless'</span>)</span><br><span class="line">        chrome_options.add_argument(<span class="string">'--disable-gpu'</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(chrome_options=chrome_options)</span><br><span class="line">		<span class="comment"># self.driver=webdriver.Chrome() #有这一步即有界面的UI自动化</span></span><br><span class="line">		self.driver.implicitly_wait(<span class="number">15</span>) <span class="comment">#隐式等待15秒</span></span><br><span class="line">    	self.driver.set_window_size(<span class="number">1366</span>,<span class="number">768</span>) <span class="comment">#调整浏览器窗口分辨率</span></span><br><span class="line"> 	<span class="function"><span class="keyword">def</span> <span class="title">test_xx</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 测试用例</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment">#前置条件</span></span><br><span class="line">    	self.driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p>2、selenium做自动化测试的局限在于只能操控浏览器，有时候需要处理Windows弹框时，注意并非浏览器弹框而是系统弹框，如上传文件，在内控易中就有处理此类操作。在度娘摸索过程中，尝试了众多办法，也不是send_keys能直接解决的，寻找到了最合适的方法，调用autoIT 3软件录制程序生成的au3文件或者exe文件。</p>
+<p>作者很懒，百度此<a href="https://blog.csdn.net/qq_32897143/article/details/82014603" target="_blank" rel="noopener">文档</a>进行尝试，有兴趣的话可以去看看autoIT编程，简直是操作Windows的利器。</p>
+<p>3、不会自动发邮件的自动化代码，就不能算自动化代码，因此也跟风借鉴了大牛的自动化代码，写了自己的发送报告，看代码吧。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_report</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line">    <span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line">    <span class="keyword">from</span> email.utils <span class="keyword">import</span> parseaddr, formataddr</span><br><span class="line">    <span class="keyword">import</span> smtplib</span><br><span class="line">    <span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEMultipart</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_format_addr</span><span class="params">(s)</span>:</span></span><br><span class="line">        name, addr = parseaddr(s)</span><br><span class="line">        <span class="keyword">return</span> formataddr((Header(name, <span class="string">'utf-8'</span>).encode(), addr))</span><br><span class="line">    from_addr = <span class="string">'1280490756@qq.com'</span><span class="comment">#自己的邮箱账号</span></span><br><span class="line">    password = <span class="string">'ctzgyuxebocpbaed'</span><span class="comment">#该QQ形成的动态密码，如更换QQ，则要开启smtp服务，复制服动态码</span></span><br><span class="line">    to_addr = [<span class="string">'wangxiong@neikongyi.com'</span>]<span class="comment">#接收人的邮箱账号</span></span><br><span class="line">    smtp_server = <span class="string">'smtp.qq.com'</span></span><br><span class="line">    msg =MIMEMultipart()</span><br><span class="line">    msg[<span class="string">'From'</span>] = _format_addr(<span class="string">'王雄&lt;%s&gt;'</span> % from_addr)<span class="comment">#发件人</span></span><br><span class="line">    msg[<span class="string">'To'</span>] = _format_addr(<span class="string">'管理员 &lt;%s&gt;'</span> % to_addr)</span><br><span class="line">    msg[<span class="string">'Subject'</span>] = Header(<span class="string">'自动化测试用例执行情况'</span>, <span class="string">'utf-8'</span>).encode()<span class="comment">#标题</span></span><br><span class="line">    msg.attach(MIMEText(<span class="string">'用例执行情况，可见附件'</span> ))</span><br><span class="line">    <span class="comment">#此处为测试报告的存放路径，如要运行代码，则要修改为当前path的文件</span></span><br><span class="line">    att1 = MIMEText(open(<span class="string">r'D:\eclipse\work\neikongyi\TestReport.html'</span>, <span class="string">'rb'</span>).read(),<span class="string">'base64'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">    att1[<span class="string">"Content-Type"</span>] = <span class="string">'application/octet-stream'</span></span><br><span class="line">    att1[<span class="string">"Content-Disposition"</span>] = <span class="string">'attachment; filename="TestReport.html"'</span> <span class="comment">#这里的filename可以任意写，写什么名字，邮件中显示什么名字</span></span><br><span class="line">    msg.attach(att1)</span><br><span class="line">    server = smtplib.SMTP(smtp_server, <span class="number">25</span>)</span><br><span class="line">    server.set_debuglevel(<span class="number">1</span>)</span><br><span class="line">    server.login(from_addr, password)</span><br><span class="line">    server.sendmail(from_addr, to_addr, msg.as_string())</span><br><span class="line">    server.quit()</span><br></pre></td></tr></table></figure>
+
+<p>4、在做UI自动化测试时，经常需要拉动浏览器的下拉条，检索度娘，发现调用js是最简单最方便的，话不多说，以百度贴吧首页举列子吧。浏览器打开<a href="tieba.baidu.com">贴吧</a>，打开控制台，复制js path，然后放到python里面调用js执行浏览器下拉。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">try_js</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver <span class="comment">#导入selenium包</span></span><br><span class="line">    driver=webdriver.Chrome() <span class="comment">#调用谷歌浏览器</span></span><br><span class="line">    driver.implicitly_wait(<span class="number">15</span>) <span class="comment">#隐式等待15秒</span></span><br><span class="line">    driver.get(<span class="string">'https://tieba.baidu.com'</span>)</span><br><span class="line">    js=<span class="string">'var q=document.querySelector("html").scrollTo(0,10000)'</span></span><br><span class="line">    driver.excute_scripts(js)</span><br></pre></td></tr></table></figure>
+
+<p>执行上面的python代码，达到拉动贴吧右侧下拉条效果，当然也可以直接在f12console执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"html"</span>).scrollTo(<span class="number">0</span>,<span class="number">10000</span>)</span><br></pre></td></tr></table></figure>
+
+<p>也能达到拉动效果。</p>
+<p>​        剩下的都是基本操作，继续加油鸭~</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/wx794/tags/Web测试，自动化测试/">#Web测试，自动化测试</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/07/02/管理学原理/">管理学原理重点知识点</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/06/18/近代史重要会议/">近代史重要会议</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/06/17/history/">中国近现代史</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/11/20/run/">那些年靠着坑蒙拐骗做测试的日子</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:1334819965@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/wx794/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

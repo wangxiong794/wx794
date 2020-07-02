@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="​        学习使用requests爬虫，获取自考学习机构中的课程名称，初步解析response信息，获取该用户下的所有课程，得到list信息。    
+1234567891011121314151617181920212223242526272829303132333435363738394">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="wx794">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="获取某学习网站的人员课程">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="伊甸园">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>获取某学习网站的人员课程 - 伊甸园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/wx794/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/wx794/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/about/index.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/contact/index.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+	<div>
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=2847331031&auto=1&height=90"></iframe>
+	</div>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/wx794/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+	</div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/wx794/2019/09/19/request1/">
+                获取某学习网站的人员课程
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-09-19</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>​        学习使用requests爬虫，获取自考学习机构中的课程名称，初步解析response信息，获取该用户下的所有课程，得到list信息。    </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''requests请求 获取升学教育的自考课程列表'''</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#先进行登录，登录之后获取有效参数。后续操作依赖token参数来保持连接</span></span><br><span class="line">    <span class="comment">#定义全局变量</span></span><br><span class="line">    <span class="keyword">global</span> login_token </span><br><span class="line">    <span class="comment">#请求的URL</span></span><br><span class="line">    url = <span class="string">"https://webapi.sxmaps.com/sapp/sapp-api/notfilter/member/login"</span></span><br><span class="line">    <span class="comment">#请求传递的参数，密码和电话号码</span></span><br><span class="line">    payload = <span class="string">"&#123;\"loginPwd\": \"wx133481\", \n\"memberCellphone\": \"13882657533\"&#125;"</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'ccept'</span>: <span class="string">"application/json, text/plain, */*"</span>,</span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">"application/json;charset=UTF-8"</span>,</span><br><span class="line">        <span class="string">'origin'</span>: <span class="string">"http://study.sxmaps.com"</span>,</span><br><span class="line">        <span class="string">'referer'</span>: <span class="string">"http://study.sxmaps.com/"</span>,</span><br><span class="line">        <span class="string">'user-agent'</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    login_message = requests.request(<span class="string">"POST"</span>, url, data=payload, headers=headers)</span><br><span class="line">    <span class="comment">#请求的response 解码   text替换为content则为原码传递</span></span><br><span class="line">    login_text=login_message.text</span><br><span class="line">    <span class="comment">#根据response确定是否成功</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="string">'success'</span> <span class="keyword">in</span> login_text</span><br><span class="line">    <span class="comment">#将response的字符格式由str转换成dict</span></span><br><span class="line">    login_text=json.loads(login_text)</span><br><span class="line">    <span class="comment">#取出dict的data部分的token键的value值，用于其他方法传递时使用</span></span><br><span class="line">    login_data=login_text[<span class="string">'data'</span>]</span><br><span class="line">    login_token=login_data[<span class="string">'token'</span>]</span><br><span class="line">    print(<span class="string">'get success:'</span>+login_token)</span><br><span class="line">    <span class="keyword">return</span> login_token</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getcourselist</span><span class="params">(login_token)</span>:</span></span><br><span class="line">    <span class="comment">#获取课程列表，解析response将课程转换为列表</span></span><br><span class="line">    url = <span class="string">"https://webapi.sxmaps.com/sapp/sapp-api/webStudy/getCourseListByProfessionIds"</span></span><br><span class="line">    </span><br><span class="line">    payload = <span class="string">"&#123;\"professionIds\": [\"988\"], \"selectType\": \"2\", \"localVersionNo\": \"1.0\"&#125;"</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'accept'</span>: <span class="string">"application/json, text/plain, */*"</span>,</span><br><span class="line">        <span class="string">'content-type'</span>: <span class="string">"application/json;charset=UTF-8"</span>,</span><br><span class="line">        <span class="string">'origin'</span>: <span class="string">"http://study.sxmaps.com"</span>,</span><br><span class="line">        <span class="string">'referer'</span>: <span class="string">"http://study.sxmaps.com/"</span>,</span><br><span class="line">        <span class="string">'token'</span>: login_token,</span><br><span class="line">        <span class="string">'user-agent'</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    response = requests.request(<span class="string">"POST"</span>, url, data=payload, headers=headers)</span><br><span class="line">    <span class="comment">#获取解码后的response信息</span></span><br><span class="line">    c_data=response.text</span><br><span class="line">    <span class="comment">#将信息由str转换为dict</span></span><br><span class="line">    c_data=json.loads(c_data)</span><br><span class="line">    <span class="comment">#获取data键的vlaue值，格式为dict嵌套list中，采用遍历的方式，分别取出课程名</span></span><br><span class="line">    c_data_list=c_data[<span class="string">'data'</span>]</span><br><span class="line">    print(c_data_list)</span><br><span class="line">    list_len=len(c_data_list)</span><br><span class="line">    <span class="comment">#定义空的列表存放课程名称</span></span><br><span class="line">    c_name_list=[]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,list_len):</span><br><span class="line">        c_dict=c_data_list[i]</span><br><span class="line">        <span class="comment">#此操作冗余，功能为删除 dict中的courseCode键值对</span></span><br><span class="line">        c_dict.pop(<span class="string">'courseCode'</span>)</span><br><span class="line">        c_name=c_dict[<span class="string">'courseName'</span>]</span><br><span class="line">        <span class="comment">#将获取的名称增加到列表当中，注意不能使用 c_name_list=c_name_list.append(c_name)  第二次调用时会报错</span></span><br><span class="line">        c_name_list.append(c_name)</span><br><span class="line">    print(c_name_list)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">"__main__"</span>:</span><br><span class="line">    login_token=login()</span><br><span class="line">    getcourselist(login_token)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/wx794/tags/Requests/">#Requests</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/07/02/管理学原理/">管理学原理重点知识点</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/06/18/近代史重要会议/">近代史重要会议</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/06/17/history/">中国近现代史</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/11/20/run/">那些年靠着坑蒙拐骗做测试的日子</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:1334819965@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/wx794/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

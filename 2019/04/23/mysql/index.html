@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="SQL的基本语法规范
+1、sql不区分大小写，但是习惯上关键字、系统保留字、函数名称大写，表名和列名小写；2、sql使用空格或者回车来分隔每个单词都一样，习惯上每个子句换行，WHERE子句中的每个条件占一行，子查询单独占一行；3、复杂的语句最好加上注释进行说明；4、sql语句中使用分号作为分隔符，系">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="wx794">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="MySQL基础命令大全">
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="伊甸园">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>MySQL基础命令大全 - 伊甸园</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/wx794/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/wx794/">
+                    Home
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/archives">
+                    Archives
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/about/index.html">
+                    About
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/tags">
+                    Tags
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/categories">
+                    Categories
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/wx794/contact/index.html">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+	<div>
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=2847331031&auto=1&height=90"></iframe>
+	</div>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/wx794/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+	</div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/wx794/2019/04/23/mysql/">
+                MySQL基础命令大全
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-23</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>SQL的基本语法规范</p>
+<p>1、sql不区分大小写，但是习惯上关键字、系统保留字、函数名称大写，表名和列名小写；<br>2、sql使用空格或者回车来分隔每个单词都一样，习惯上每个子句换行，WHERE子句中的每个条件占一行，子查询单独占一行；<br>3、复杂的语句最好加上注释进行说明；<br>4、sql语句中使用分号作为分隔符，系统读取到分号才会执行语句。</p>
+<h1 id="数据定义语言（DDL）"><a href="#数据定义语言（DDL）" class="headerlink" title="数据定义语言（DDL）"></a>数据定义语言（DDL）</h1><p>​    DDL是用于描述数据库中要存储的现实世界实体的语言，主要是用在定义或改变结构，数据类型，表之间的链接和约束等初始化工作上，大多在建立表时使用。</p>
+<h2 id="1-CREATE"><a href="#1-CREATE" class="headerlink" title="1.CREATE"></a>1.CREATE</h2><p>​    create命令为创建，可创建数据库、数据表、存储过程。</p>
+<h3 id="创建数据库-create-database"><a href="#创建数据库-create-database" class="headerlink" title="创建数据库 create database"></a>创建数据库 create database</h3><p>在登录MySQL服务后，使用create命令创建数据库，语法为：create database name;</p>
+<h3 id="创建数据表-create-table"><a href="#创建数据表-create-table" class="headerlink" title="创建数据表 create table"></a>创建数据表 create table</h3><p>必须要有创建表的权限，表名，列名可以由字母、数字和下划线组成，必须以字母开头，不能是系统关键字</p>
+<p><strong>create table 表名(列名1 数据类型，列名2 数据类型，……列名n 数据类型);</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*注释：创建test表*/</span><br><span class="line">CREATE TABLE test</span><br><span class="line">(</span><br><span class="line">#注释：属性（列名）testid，整数类型</span><br><span class="line">testid INT,</span><br><span class="line">testname VARCHAR(20),</span><br><span class="line">age TINYINT,</span><br><span class="line">gender CHAR(1),</span><br><span class="line">birth DATE,</span><br><span class="line">score FLOAT(4,2)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>数字类型：<br>    int 整数<br>    float(m,n) 小数,最多位数为m，精确到小数点后n位<br>    double(m,n) 双精度小数，最多位数为m，精确到小数点后n位<br>    n会占用m的位数，float(7,2)表示5位整数2位小数</p>
+<p>字符类型：<br>    char(n) 最大长度是n，固定长度的字符类型，n的最大值是255字节<br>    varchar(n) 最大长度是n，可变长度的字符类型，n的最大值是65535字节</p>
+<p>​    char(n) 如果存储的数据长度不到n个字节，会用空格补齐到n个字节<br>​    varchar(n) 按照数据的实际长度存储</p>
+<p>​    char浪费存储空间，查询效率高<br>​    varchar节省存储空间，查询效率低</p>
+<p>时间和日期类型<br>    date 日期<br>    time 时间<br>    datetime 时间+日期<br>    timestamp 时间戳</p>
+<h3 id="创建存储过程-create-procedure"><a href="#创建存储过程-create-procedure" class="headerlink" title="创建存储过程 create procedure"></a>创建存储过程 create procedure</h3><p>​    存储过程是MySQL编程的容器，mysql编程是将编程语言和sql语句结合，自动执行很多数据库操作，完成复杂的功能。所有的代码必须写在存储过程中进行保存，当需要执行这些代码时，调用存储过程的名字，实现相应的功能。</p>
+<p>固定版式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">delimiter //</span><br><span class="line">create procedure 存储过程名称(参数1，参数2，……参数n)</span><br><span class="line">begin</span><br><span class="line">程序代码；</span><br><span class="line">end;</span><br><span class="line">//</span><br><span class="line">delimiter ;</span><br><span class="line">/*delimiter 就是分隔符的意思，在存储过程中，每一行代码结束后都会有一个分号，如果系统仍旧使用分号作为分隔，会将每一行看作是一个语句，直接执行。</span><br><span class="line">delimiter // 表示告诉系统不要用分号作为分隔符，而是使用//，其他符号也可以，如$$</span><br><span class="line">delimiter ; 表示告诉系统重新将分号作为分隔符，delimiter后面必须有空格，不能换行*/</span><br></pre></td></tr></table></figure>
+
+<p>存储过程可以有参数也可以没有，具体根据需要。即使没有参数括号必须有，存储过程具体要实现什么功能，相关的语句和代码写在begin和end之间。如打印helloworld：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line">CREATE PROCEDURE hello()</span><br><span class="line">BEGIN</span><br><span class="line">SELECT &apos;hello world&apos;;</span><br><span class="line">END;</span><br><span class="line">//</span><br><span class="line">DELIMITER ;</span><br><span class="line">/*执行过后只是将存储过程创建并保存，并不会执行其中的语句,如果要调用存储过程，使用 call 存储过程名称*/</span><br><span class="line">CALL hello()</span><br></pre></td></tr></table></figure>
+
+<p>存储过程中根据需要可以定义参数，参数是临时存储和传递值的中间量，可以在存储过程外赋值，然后将值传递到存储过程内，参与运算，得到相应的结果；也可以在存储过程内获取运算的结果，传递到存储过程外。定义参数的方式：<strong>参数类型 参数名称 数据类型</strong><br>    in    类型表示将数据从外部传递到内部的参数<br>    out    类型表示将结果从内部传递到外部的参数<br>    in out     上述两个功能都具备的参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#编写一个存储过程，要求输入一个testid，在测试表(test表)查询出对应的testname</span><br><span class="line">DELIMITER //</span><br><span class="line">CREATE PROCEDURE p_testid (IN a INT)</span><br><span class="line">BEGIN</span><br><span class="line">SELECT testname FROM test</span><br><span class="line">WHERE testid = a;</span><br><span class="line">END;</span><br><span class="line">//</span><br><span class="line">DELIMITER ;</span><br><span class="line">#调用过程，有参数的过程必须给参数赋值</span><br><span class="line">CALL p_testid(17968);</span><br></pre></td></tr></table></figure>
+
+<p>要给参数或者变量赋值，有2种方法<br>    1.手动赋值<br>        set 参数/变量=value;</p>
+<p>​    2.将查询结果赋值给参数或变量</p>
+<p>​        select … into 参数/变量 from ……;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*输入两个人name，计算他们的score之差，使用out类型的参数获取*/</span><br><span class="line">DROP PROCEDURE IF EXISTS pro_minus;</span><br><span class="line">#如果有名称为pro_minus的储存过程（procedure），则删除该储存过程</span><br><span class="line">DELIMITER //</span><br><span class="line">CREATE  PROCEDURE pro_minus(IN a VARCHAR(20),IN b VARCHAR(20),OUT c FLOAT(7,2))</span><br><span class="line">BEGIN</span><br><span class="line">DECLARE ascore FLOAT(7,2) DEFAULT 0;</span><br><span class="line">DECLARE bscore FLOAT(7,2) DEFAULT 0;</span><br><span class="line">SELECT score INTO ascore FROM test</span><br><span class="line">WHERE testname = a;</span><br><span class="line">SELECT score INTO bscore FROM test</span><br><span class="line">WHERE testname = b;</span><br><span class="line">SET c=ascore-bscore;</span><br><span class="line">END;</span><br><span class="line">//</span><br><span class="line">DELIMITER ;</span><br><span class="line">/*存储过程中可以声明变量来临时存储和传递值，但是只能在内部使用</span><br><span class="line">不像参数可以从内部或外部双向传递值</span><br><span class="line">变量声明：declare 变量名称 数据类型 [default 默认值];</span><br><span class="line">必须先声明变量才可以使用*/</span><br><span class="line">CALL pro_minus(&apos;KING&apos;,&apos;JACK&apos;,@score);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-ALTER"><a href="#2-ALTER" class="headerlink" title="2.ALTER"></a>2.ALTER</h2><h3 id="表结构修改"><a href="#表结构修改" class="headerlink" title="表结构修改"></a>表结构修改</h3><p>在工作中，一般不推荐在表创建成功后再去改表结构，尤其是当表中已经有数据之后,如果确实因为特殊原因需要修改结构，使用alter语句。</p>
+<p>1）添加列，在语句最后可以使用first表示在表的第一列添加，也可以用 after 列名 ，放到某列之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add 列名 数据类型；</span><br></pre></td></tr></table></figure>
+
+<p>2）删除列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop (column) 列名；</span><br></pre></td></tr></table></figure>
+
+<p>3）修改列名/数据类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 原列名 新列名 数据类型；</span><br></pre></td></tr></table></figure>
+
+<p>4）添加默认值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 alter (column) 列名 set default 默认值;</span><br></pre></td></tr></table></figure>
+
+<p>5）删除默认值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 alter (column) 列名 drop default;</span><br></pre></td></tr></table></figure>
+
+<h3 id="约束修改"><a href="#约束修改" class="headerlink" title="约束修改"></a>约束修改</h3><p>约束就是数据应该满足的条件或者规则，不满足条件的数据不能被放入表中，约束以列为单位进行定义，规定某列的数据必须满足的条件</p>
+<p>主键（primary key）约束：定义某一列为主键，该列数据不能重复也不能为空，每张表主键只能有一个。</p>
+<p>外键（foreign key）约束：定义某一列为外键，参照其他表的主键，取值可以为空，如果不为空则必须与主键的值对应，外键只能定义成表级约束。</p>
+<p>定义语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foreign key(列名) references 表名（列名）</span><br></pre></td></tr></table></figure>
+
+<p>非空（not null）约束：定义某一列的取值不能为空，非空只能定义成列级约束</p>
+<p>唯一（unique）约束：定义某一列的值必须唯一</p>
+<p>检查（check）约束：mysql不支持</p>
+<p>约束可以在创建表的同时创建，也可以在创建表之后创建，约束分为列级约束和表级约束两种，两者效果一样，只是定义的方式不一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">create table 表名</span><br><span class="line">(</span><br><span class="line">列名1 数据类型 [default 默认值] [列级约束1 列级约束2 ……]，</span><br><span class="line">列名2 数据类型 [default 默认值] [列级约束1 列级约束2 ……]，</span><br><span class="line">……</span><br><span class="line">列名n 数据类型 [default 默认值] [列级约束1 列级约束2 ……]，</span><br><span class="line">constraint 约束名称1 约束类型（列名），</span><br><span class="line">constraint 约束名称2 约束类型（列名），</span><br><span class="line">……</span><br><span class="line">);</span><br><span class="line">*/</span><br><span class="line">CREATE TABLE test3</span><br><span class="line">(</span><br><span class="line">testid INT PRIMARY KEY,</span><br><span class="line">testname VARCHAR(20) NOT NULL,</span><br><span class="line">deptno INT,</span><br><span class="line">FOREIGN KEY(deptno) REFERENCES dept(deptno),</span><br><span class="line">phone BIGINT UNIQUE</span><br><span class="line">);</span><br><span class="line">DESC test3;</span><br><span class="line"></span><br><span class="line">INSERT INTO test3</span><br><span class="line">VALUES (1000,&apos;xiaoming&apos;,10,13800138000);</span><br><span class="line"></span><br><span class="line">SELECT * FROM test3;</span><br><span class="line"></span><br><span class="line">INSERT INTO test3</span><br><span class="line">VALUES (1005,&apos;xiaoqiang&apos;,40,13800138005);</span><br></pre></td></tr></table></figure>
+
+<p>创建表之后可以修改约束</p>
+<p>添加主键约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add constraint 约束名称 primary key(列名);</span><br></pre></td></tr></table></figure>
+
+<p>删除主键约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop constraint primary key;</span><br></pre></td></tr></table></figure>
+
+<p>添加唯一约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add unique 列名;</span><br></pre></td></tr></table></figure>
+
+<p>删除唯一约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop index 列名;</span><br></pre></td></tr></table></figure>
+
+<p>添加非空约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 原列名 新列名 数据类型 not null；</span><br></pre></td></tr></table></figure>
+
+<p>删除非空约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 change 原列名 新列名 数据类型;</span><br></pre></td></tr></table></figure>
+
+<p>添加外键约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 add foreign key(列名) references 表名(列名);</span><br></pre></td></tr></table></figure>
+
+<p>删除外键约束</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table 表名 drop foreign key 外键名称；</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE test3;</span><br><span class="line">/*</span><br><span class="line">CREATE TABLE `test3` (</span><br><span class="line">  `testid` int(11) NOT NULL,</span><br><span class="line">  `testname` varchar(20) NOT NULL,</span><br><span class="line">  `deptno` int(11) DEFAULT NULL,</span><br><span class="line">  `phone` bigint(20) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`testid`),</span><br><span class="line">  UNIQUE KEY `phone` (`phone`),</span><br><span class="line">  KEY `deptno` (`deptno`),</span><br><span class="line">  CONSTRAINT `test3_ibfk_1` FOREIGN KEY (`deptno`) REFERENCES `dept` (`deptno`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=latin1</span><br><span class="line"></span><br><span class="line">test3_ibfk_1 就是系统自动分配给外键约束的名称</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-DROP"><a href="#3-DROP" class="headerlink" title="3.DROP"></a>3.DROP</h2><p>删除表DROP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table 表名;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-TRUNCATE"><a href="#4-TRUNCATE" class="headerlink" title="4.TRUNCATE"></a>4.TRUNCATE</h2><p>截取表中的数据TRUNCATE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">truncate table 表名；</span><br></pre></td></tr></table></figure>
+
+<p>drop，truncate，delecte三者之间的区别：</p>
+<p>drop 属于DDL语句，删除整张表；直接生效不能回滚；<br>truncate 属于DDL语句，只能快速删除所有数据，不能指定范围；直接生效不能回滚；站在表的层面，快速清空数据；<br>delete 属于DML语句，可以删除全部也可以删除部分；需要提交才能生效，可以回滚；必须进入表，按照行来删除数据。</p>
+<h1 id="数据操作语句（DML）"><a href="#数据操作语句（DML）" class="headerlink" title="数据操作语句（DML）"></a>数据操作语句（DML）</h1><h2 id="1、INSERT"><a href="#1、INSERT" class="headerlink" title="1、INSERT"></a>1、INSERT</h2><p>INSERT INTO 语句用于向表格中插入新的行和数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 values (value1,value2,...valueN);</span><br></pre></td></tr></table></figure>
+
+<p>按照表的原有结构放入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO dept VALUES (60,&apos;Tech&apos;,&apos;Mian Yang&apos;);</span><br></pre></td></tr></table></figure>
+
+<p>执行的dml语句和ddl语句都是以事务的形式存在的，事务必须提交才能永久生效，可以回滚撤销操作，mysql默认自动提交是开启的，关闭自动提交：<br>SET autocommit=0;</p>
+<p>COMMIT; #提交<br>ROLLBACK; #回滚</p>
+<p>DDL语句都是自动提交的，并且不能关闭</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名(列名1，列名2，……列名n) values (value1,value2,...valueN);</span><br></pre></td></tr></table></figure>
+
+<p>按照自定义的列放入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO emp(empno,ename,job,sal) VALUES (8000,&apos;xiaoming&apos;,&apos;HR&apos;,2500);</span><br></pre></td></tr></table></figure>
+
+<p>未定义的列默认放入空值，也可以使用null放入空值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO dept VALUES (80,&apos;Training&apos;,NULL);</span><br></pre></td></tr></table></figure>
+
+<p>使用函数放入数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO emp(empno,ename,job,hiredate,sal,deptno) </span><br><span class="line">VALUES (8001,&apos;xiaoqiang&apos;,&apos;TESTER&apos;,CURDATE(),3000,20);</span><br></pre></td></tr></table></figure>
+
+<p>insert into 表名 select …… ； 将查询结果直接放入另一张表，拷贝数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO bonus</span><br><span class="line">SELECT ename,job,sal,comm FROM emp</span><br><span class="line">WHERE comm IS NOT NULL;</span><br><span class="line"></span><br><span class="line">ROLLBACK;#回滚操作</span><br></pre></td></tr></table></figure>
+
+<p>mysql允许一个insert语句同时放入多行数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into 表名 values (value1,value2,...valueN),(value1,value2,...valueN), (value1,value2,...valueN),...;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、UPDATE"><a href="#2、UPDATE" class="headerlink" title="2、UPDATE"></a>2、UPDATE</h2><p>Update 语句用于修改表中的数据，格式为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值</span><br></pre></td></tr></table></figure>
+
+<p>如果不写where子句，会修改所有行的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">UPDATE emp SET sal=3000;#更新所有的sal</span><br><span class="line">UPDATE emp SET sal=1200 WHERE ename = &apos;SMITH&apos;;#只更新一条sql</span><br><span class="line">SELECT * FROM emp;#查询emp表校验</span><br><span class="line">ROLLBACK;#回滚操作</span><br></pre></td></tr></table></figure>
+
+<p>可以在已有数据的基础上进行修改，30号部门表现不错，每人涨薪300</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">UPDATE emp SET sal=sal+300 WHERE deptno=30;</span><br><span class="line">ROLLBACK;#回滚操作</span><br></pre></td></tr></table></figure>
+
+<p>注意，在set和where后面，都可以使用子查询，但不能使用本表数据的子查询</p>
+<h2 id="3、DELETE"><a href="#3、DELETE" class="headerlink" title="3、DELETE"></a>3、DELETE</h2><p>DELETE 语句用于删除表中的行，如果不写where子句，会删除所有数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM 表名称 WHERE 列名称 = 值</span><br></pre></td></tr></table></figure>
+
+<h1 id="数据查询语句（DQL）"><a href="#数据查询语句（DQL）" class="headerlink" title="数据查询语句（DQL）"></a>数据查询语句（DQL）</h1><h2 id="1、select基础"><a href="#1、select基础" class="headerlink" title="1、select基础"></a>1、select基础</h2><h3 id="1）-代表所有列"><a href="#1）-代表所有列" class="headerlink" title="1）*代表所有列"></a>1）*代表所有列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM 表名称;</span><br><span class="line">#SQL 语句对大小写不敏感。SELECT 等效于 select。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2）查询指定的列"><a href="#2）查询指定的列" class="headerlink" title="2）查询指定的列"></a>2）查询指定的列</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 列名称 FROM 表名称;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3）对查询结果进行运算"><a href="#3）对查询结果进行运算" class="headerlink" title="3）对查询结果进行运算"></a>3）对查询结果进行运算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#+  - *  /</span><br><span class="line">#查询每个员工的年薪</span><br><span class="line">SELECT ename,12*sal FROM emp;</span><br><span class="line">#员工的年终奖定为年薪的10%再加上500</span><br><span class="line">SELECT ename,(12*sal)*0.1+500 FROM emp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4）空值参与运算得到结果也是空值"><a href="#4）空值参与运算得到结果也是空值" class="headerlink" title="4）空值参与运算得到结果也是空值"></a>4）空值参与运算得到结果也是空值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#计算员工的年收入,emp表不存在comm列</span><br><span class="line">SELECT ename,sal,comm,12*(sal+comm) FROM emp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5）别名"><a href="#5）别名" class="headerlink" title="5）别名"></a>5）别名</h3><p>通过使用 SQL，可以为列名称和表名称指定别名（Alias）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#查询结果中可以给列起别名加以说明</span><br><span class="line">/*</span><br><span class="line">列名 别名</span><br><span class="line">列名 AS 别名</span><br><span class="line">别名中如果包含特殊字符（空格），需要加双引号</span><br><span class="line">双引号只会在起别名的时候出现，其他的所有地方都只能用单引号而不能用双引号</span><br><span class="line">*/</span><br><span class="line">SELECT ename xingming,job zhiwei FROM emp;</span><br><span class="line">SELECT ename AS xingming,job AS zhiwei FROM emp;</span><br><span class="line">SELECT ename 姓名,job 职位 FROM emp;</span><br><span class="line">SELECT ename &quot;xing ming&quot;,job &quot;zhi wei&quot; FROM emp;</span><br><span class="line"></span><br><span class="line">#别名主要用来标识运算结果</span><br><span class="line">SELECT ename,(12*sal)*0.1+500 AS nianzhongjiang FROM emp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6）表达式"><a href="#6）表达式" class="headerlink" title="6）表达式"></a>6）表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#表达式根据数据类型的不同分为数字表达式、字符表达式和日期表达式</span><br><span class="line">#手动输入的表达式可以写在select后面，表中有多少行，表达式就显示多少次</span><br><span class="line">#手动输入数字表达式可以直接写，日期和字符表达式必须加上单引号</span><br><span class="line">SELECT 123.456,12*60*48,&apos;I am the king&apos; FROM emp;</span><br><span class="line"></span><br><span class="line">#mysql允许只写select，不写from;oracle必须要写select和from，不能缺少</span><br><span class="line">#如果要查询的数据都是手动输入，与表中数据无关，可以不写from</span><br><span class="line">SELECT 123.456,12*60*48,&apos;I am the king&apos;;</span><br><span class="line"></span><br><span class="line">SELECT &apos;who are you&apos;,ename FROM emp;</span><br><span class="line"></span><br><span class="line">SELECT job,&apos;JOB&apos; FROM emp;</span><br><span class="line">#手动字符串必须加单引号，mysql在windows平台字符串不区分大小写，但是在linux区分大小写</span><br><span class="line">#其他的数据库包括编程语言，字符串都要区分大小写</span><br></pre></td></tr></table></figure>
+
+<h3 id="7）distinct去重"><a href="#7）distinct去重" class="headerlink" title="7）distinct去重"></a>7）distinct去重</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT job FROM emp;</span><br><span class="line">SELECT DISTINCT job FROM emp;</span><br><span class="line"></span><br><span class="line">SELECT DISTINCT deptno FROM emp;</span><br><span class="line"></span><br><span class="line">#多列去重</span><br><span class="line">SELECT DISTINCT job,deptno FROM emp;</span><br><span class="line"></span><br><span class="line">#普通列不能和去重的列同时查询，因为行数不匹配，不能组成一张表</span><br><span class="line">#select ename,distinct job from emp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8）limit分页查询"><a href="#8）limit分页查询" class="headerlink" title="8）limit分页查询"></a>8）limit分页查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp;</span><br><span class="line">#如果在查询结果中，想要得到固定某几行的结果，使用limit</span><br><span class="line">#limit 写在查询语句最后</span><br><span class="line">#limit m,n 表示从第m行开始显示n行数据，第一行的行号是0</span><br><span class="line">SELECT * FROM emp</span><br><span class="line">LIMIT 2,5;</span><br><span class="line"></span><br><span class="line">#limit n  表示显示前n行数据</span><br><span class="line">SELECT * FROM emp</span><br><span class="line">LIMIT 3;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2、限定和排序"><a href="#2、限定和排序" class="headerlink" title="2、限定和排序"></a>2、限定和排序</h2><h3 id="1）where子句限定范围"><a href="#1）where子句限定范围" class="headerlink" title="1）where子句限定范围"></a>1）where子句限定范围</h3><p>#where子句后面必须是一个完整的逻辑表达式，结果只有两种true或者false</p>
+<p>#在where子句中，逻辑表达式通常是比较运算，比较条件是否满足</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=  &gt;  &lt;  &gt;=  &lt;=  != &lt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>where子句限定条件通常是用表中的某一列数据作为条件，返回满足条件的数据</p>
+<p>查询20号部门的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp WHERE deptno = 20;</span><br></pre></td></tr></table></figure>
+
+<p>查询工资高于2000的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp WHERE sal &gt; 2000;</span><br></pre></td></tr></table></figure>
+
+<p>查询职位不是manager的员工信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp WHERE job != &apos;MANAGER&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>手动输入字符串要加单引号，最好在匹配的时候大小写一致</p>
+<p>手动输入字符串要加单引号，最好在匹配的时候大小写一致</p>
+<p>查询年薪小于20000的员工信息 列的别名不能出现在where子句中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT ename,job,sal,12*sal nianxin,deptno FROM emp WHERE 12*sal &lt; 20000;</span><br></pre></td></tr></table></figure>
+
+<p>其他的数据库不支持*加上其他列一起查询，mysql允许</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT *,12*sal nianxin FROM emp;</span><br></pre></td></tr></table></figure>
+
+<p>where子句中的条件也可以是两列数据相互比较</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp WHERE sal &lt; comm;</span><br></pre></td></tr></table></figure>
+
+<p>where子句中作为条件的列可以不出现在select后面，但是这样的语句结果不够直观</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT ename,job,deptno FROM emp WHERE sal &lt;= 1500;</span><br></pre></td></tr></table></figure>
+
+<p>where子句中比较运算符的两端数据类型必须一致，如果是其他数据库，数据类型不一致时会直接报错，mysql由于是弱数据类型的语言，所以不会报错，只是这样的语句没有意义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp WHERE ename &gt; 2;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有数据满足条件，则一行数据都没有</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM emp WHERE deptno &gt; 200;</span><br></pre></td></tr></table></figure>
+
+<p>#如果有满足条件的数据，至少会返回一行，只是可能数据的值是空值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT comm FROM emp WHERE ename = &apos;SMITH&apos;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2）常用的特殊比较运算"><a href="#2）常用的特殊比较运算" class="headerlink" title="2）常用的特殊比较运算"></a>2）常用的特殊比较运算</h3><p>in(value1,value,2…valueN)， 列表匹配<br>SELECT * FROM emp WHERE job IN (‘MANAGER’,’CLERK’,’PRESIDENT’);</p>
+<p>between操作符：<br>最小值 and 最大值，范围匹配，最大值和最小值的位置不能变<br>SELECT * FROM emp WHERE sal BETWEEN 1500 AND 3000;</p>
+<p>like操作符<br>LIKE 操作符用于在 WHERE 子句中搜索列中的指定模式，模糊匹配（对字符）<br>通配符，可以匹配或者代表其他字符的特殊符号，SQL 通配符必须与 LIKE 运算符一起使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># _ 表示1个任意字符</span><br><span class="line"># % 表示任意个任意字符，包括0个1个和多个</span><br></pre></td></tr></table></figure>
+
+<p>SELECT * FROM emp<br>WHERE ename LIKE ‘S%’;</p>
+<p>SELECT * FROM emp<br>WHERE ename LIKE ‘%S’;</p>
+<p>SELECT * FROM emp<br>WHERE ename LIKE ‘%A%’;</p>
+<p>SELECT * FROM emp<br>WHERE ename LIKE ‘_A%’;</p>
+<p>SELECT * FROM emp<br>WHERE ename LIKE ‘_____’;</p>
+<p>#is null, 匹配空值（不能写成 =null）<br>SELECT * FROM emp<br>WHERE comm IS NULL;</p>
+<h3 id="3）逻辑运算"><a href="#3）逻辑运算" class="headerlink" title="3）逻辑运算"></a>3）逻辑运算</h3><p>and 与运算，所有的条件都要满足才能返回结果<br>SELECT * FROM emp WHERE deptno = 20 AND sal &gt; 2000;</p>
+<p>or 或运算，多个条件满足任意一个就能返回结果<br>SELECT * FROM emp WHERE deptno = 20 OR sal &gt; 2000;</p>
+<p>not 非运算，返回不满足条件的结果<br>SELECT * FROM emp WHERE NOT sal &gt; 2000;<br>如果是数学符号的比较运算，not必须写在最前面<br>如果是英文的比较运算，not可以写在最前也可以写在运算符中间<br>SELECT * FROM emp<br>WHERE deptno NOT IN (10,20);</p>
+<h3 id="4）运算优先级"><a href="#4）运算优先级" class="headerlink" title="4）运算优先级"></a>4）运算优先级</h3><p>数学运算&gt;比较运算&gt;NOT&gt;AND&gt;OR</p>
+<p>可以使用括号改变运算优先级</p>
+<p>SELECT * FROM emp<br>WHERE deptno = 20<br>OR sal &gt; 2000<br>AND job IN (‘MANAGER’,’CLERK’);</p>
+<p>SELECT * FROM emp<br>WHERE (deptno = 20<br>OR sal &gt; 2000)<br>AND job IN (‘MANAGER’,’CLERK’);</p>
+<h3 id="5）排序ORDER-BY子句"><a href="#5）排序ORDER-BY子句" class="headerlink" title="5）排序ORDER BY子句"></a>5）排序ORDER BY子句</h3><p>order by也在查询语句的后面，但是在limit之前<br>asc 表示升序排列，默认可以不写<br>desc 表示降序排列<br>SELECT * FROM emp ORDER BY sal ASC;</p>
+<p>所有的数据类型都可以排序<br>SELECT * FROM emp WHERE deptno = 20 ORDER BY hiredate DESC;</p>
+<p>SELECT * FROM emp ORDER BY ename;</p>
+<p>可以使用别名排序<br>SELECT <em>,12</em>sal nianxin FROM emp ORDER BY nianxin DESC;</p>
+<p>多列排序<br>SELECT * FROM emp ORDER BY deptno,sal DESC;<br>多列排序时，有重复数据的列写在前面</p>
+<p>#查询工资排名前三的员工信息<br>SELECT * FROM emp<br>ORDER BY sal DESC<br>LIMIT 3;</p>
+<h2 id="3、单行函数"><a href="#3、单行函数" class="headerlink" title="3、单行函数"></a>3、单行函数</h2><p>#函数可以实现特定的功能或者运算，给函数输入数据，函数经过处理，得到相应的结果<br>f1(X)=3x+2<br>f1(4)=14<br>f2(X,Y)=5x+4y<br>f2(3,2)=23</p>
+<p>#mysql中系统自带的单行函数，提供了数据特殊处理的方式</p>
+<p>#可以协助我们快速对特定数据进行处理</p>
+<p>#系统中的函数数量非常多，这里介绍一些常用函数</p>
+<p>#单行数据针对表中的每一行数据分别进行处理或运算，得到相应的结果</p>
+<p>#单行函数按照处理的数据类型分为：数值函数，字符函数，日期函数，逻辑函数</p>
+<h3 id="1）数值函数"><a href="#1）数值函数" class="headerlink" title="1）数值函数"></a>1）数值函数</h3><p>#round(m,n) 将数字m四舍五入到小数点后n位<br>SELECT ROUND(123.456,1),ROUND(123.456,2),ROUND(123.456,0);</p>
+<p>#n可以不写，默认精确到整数<br>SELECT ROUND(123.456);</p>
+<p>#n可以为负数，精确到小数点前n位<br>SELECT ROUND(126.456,-1),ROUND(173.456,-2),ROUND(823.456,-3);</p>
+<p>#truncate(m,n) 将数字m截取到小数点后n位<br>SELECT TRUNCATE(123.456,1),TRUNCATE(123.456,2),TRUNCATE(123.456,0);</p>
+<p>#truncate必须两个参数都有，不能省略n</p>
+<p>#n可以为负数，截取到小数点前n位<br>SELECT TRUNCATE(126.456,-1),TRUNCATE(173.456,-2),TRUNCATE(823.456,-3);</p>
+<p>#floor(m) 向下取整，返回小于等于m的最大整数</p>
+<p>#ceil(m) 向上取整，返回大于等于m的最小整数<br>SELECT FLOOR(23),FLOOR(23.45),FLOOR(-23.45);<br>SELECT CEIL(23),CEIL(23.45),CEIL(-23.45);</p>
+<p>#mod(m,n) 计算m除以n的余数<br>SELECT MOD(12,5),MOD(123.45,5.7),MOD(12,0);</p>
+<p>#rand() 生成一个0到1之间的随机数<br>SELECT RAND();</p>
+<p>#要得到一个1到10之间的随机整数<br>SELECT ROUND(1+RAND()*9);</p>
+<h3 id="2）字符函数"><a href="#2）字符函数" class="headerlink" title="2）字符函数"></a>2）字符函数</h3><p>#concat(str1,str2,…,strN) 将多个字符串连接在一起<br>SELECT CONCAT(‘abcdefg’,’xyz’);<br>SELECT CONCAT(ename,job) FROM emp;<br>SELECT CONCAT(ename,’ is a ‘,job) FROM emp;</p>
+<p>#length(str) 计算字符串的长度<br>SELECT LENGTH(‘abcdefg’);<br>SELECT ename,LENGTH(ename) FROM emp;</p>
+<p>#函数处理过后的数据也可以写在where子句中作为条件<br>SELECT * FROM emp<br>WHERE LENGTH(ename)=4;</p>
+<p>#left(str,n) 截取字符串最左边n个字符</p>
+<p>#right(str,n) 截取字符串最右边n个字符<br>SELECT ename,LEFT(ename,2),RIGHT(ename,2) FROM emp;</p>
+<p>#mid(str,m,n) 从字符串的第m个字符开始截取长度为n的字符串<br>SELECT ename,MID(ename,2,3) FROM emp;</p>
+<p>#n可以不写，默认截取后面所有的字符<br>SELECT ename,MID(ename,3) FROM emp;</p>
+<p>#m可以为负数，从右向左数第m个字符开始截取<br>SELECT ename,MID(ename,-2) FROM emp;</p>
+<p>#replace(str1,str2,str3) 在str1中找到str2替换为str3<br>SELECT REPLACE(‘He love you’,’He’,’I’);<br>SELECT ename,REPLACE(ename,’A’,’XXXXX’) FROM emp;</p>
+<h3 id="3）日期函数"><a href="#3）日期函数" class="headerlink" title="3）日期函数"></a>3）日期函数</h3><p>#日期的格式是’YYYY-MM-DD’</p>
+<p>#时间的格式是’HH:MM:SS’</p>
+<p>#查询1981年6月之前入职的员工信息<br>SELECT * FROM emp<br>WHERE hiredate &lt; ‘1981-06-01’;</p>
+<p>#curdate() 返回当前系统日期，curtime 返回当前系统时间<br>SELECT CURDATE(),CURTIME();</p>
+<p>#now() 返回当前系统日期+时间<br>SELECT NOW();</p>
+<p>#year(date) 返回日期所在的年份，month(date) 返回日期所在的月份，day(date)返回日期的天数<br>SELECT *,YEAR(hiredate),MONTH(hiredate),DAY(hiredate) FROM emp;</p>
+<p>#查看冬天入职的员工<br>SELECT * FROM emp<br>WHERE MONTH(hiredate) IN (10,11,12);</p>
+<p>#DATE_ADD(date,interval n 单位) 给日期加上n个单位时间，单位可以是year，month，day<br>SELECT DATE_ADD(CURDATE(),INTERVAL -5 MONTH);</p>
+<h3 id="4）逻辑函数"><a href="#4）逻辑函数" class="headerlink" title="4）逻辑函数"></a>4）逻辑函数</h3><p>#if(条件判断,value1,value2) 如果条件成立则返回value1，如果条件不成立则返回value2</p>
+<p>#对员工的工资进行判断，员工工资大于等于3000的显示高富帅，其他显示矮矬穷<br>SELECT *,IF(sal&gt;=3000,’高富帅’,’矮矬穷’) FROM emp;</p>
+<p>#对员工的工资进行判断，员工工资大于等于3000的显示高富帅，</p>
+<p>#2000到3000之间的显示中产</p>
+<p>#1000到2000之间显示小资</p>
+<p>#1000以下矮矬穷<br>SELECT *,IF(sal&gt;=3000,’高富帅’,IF(sal&gt;=2000,’中产’,IF(sal&gt;=1000,’小资’,’矮矬穷’))) FROM emp;</p>
+<p>#ifnull(x,y) 如果x的值为空，则返回y，如果x不为空则返回x<br>SELECT <em>,12</em>(sal+IFNULL(comm,0)) nianshouru FROM emp;</p>
+<p>/*<br>case x<br>when value1 then result1<br>when value2 then result2<br>…<br>when valueN then resultN<br>else resultN+1<br>end</p>
+<p>判断x的值，如果x=value1则返回result1<br>              如果x=value2则返回result2<br>              ……<br>              如果x=valueN则返回resultN<br>              如果以上值都不满足返回resultN+1<br>*/</p>
+<p>#根据员工不同的职位涨不同幅度的工资</p>
+<p>#clerk涨10%，salesman涨15%</p>
+<p>#manager涨20%，其他人不变<br>SELECT <em>,<br>CASE job<br>WHEN ‘CLERK’ THEN sal</em>1.1<br>WHEN ‘SALESMAN’ THEN sal<em>1.15<br>WHEN ‘MANAGER’ THEN sal</em>1.2<br>ELSE sal<br>END addsal<br>FROM emp;</p>
+<h2 id="4、多表查询"><a href="#4、多表查询" class="headerlink" title="4、多表查询"></a>4、多表查询</h2><h3 id="1）笛卡尔积"><a href="#1）笛卡尔积" class="headerlink" title="1）笛卡尔积"></a>1）笛卡尔积</h3><p>#查询员工的信息和其所在部门的信息<br>SELECT * FROM emp;<br>SELECT * FROM dept;</p>
+<p>SELECT ename,job,sal,dname,loc FROM emp,dept;</p>
+<p>#集合A中的所有元素和集合B中的所有元素，组成的有序对成为笛卡尔积，记作A×B</p>
+<p>#在关系型数据库中，多表查询时如果没有连接条件，会产生笛卡尔积</p>
+<p>#连接条件就是两张表之间数据的关系，是A表中的某几列和B表中的某几列数据的联系</p>
+<p>#连接条件写在where子句中，通常为：表1.列1=表2.列2</p>
+<p>#多表查询本质是先生成笛卡尔积，再在笛卡尔积中筛选满足条件的数据</p>
+<p>#查询n张表，至少要有n-1个连接条件</p>
+<h3 id="2）多表查询的语法规范"><a href="#2）多表查询的语法规范" class="headerlink" title="2）多表查询的语法规范"></a>2）多表查询的语法规范</h3><p>#多表查询时，必须使用表名来限定所有列名，表名.列名</p>
+<p>#1是为了避免重名的列报错</p>
+<p>#2是为了提高查询效率<br>SELECT emp.ename,emp.job,emp.sal,emp.deptno,dept.dname,dept.loc FROM emp,dept;</p>
+<p>#多表查询时，给表起别名，再使用表的别名来限定列名</p>
+<p>#表的别名尽量简单，用一个字母能够区分多个表就可以</p>
+<p>#多表查询时，先写from，from单独占一行<br>SELECT e.ename,e.job,e.sal,e.deptno,d.dname,d.loc<br>FROM emp e,dept d;</p>
+<p>#多表查询时，如果查询结果中有同名的列，起不同的别名加以区分<br>SELECT e.ename,e.job,e.sal,e.deptno eno,d.deptno,d.dname,d.loc<br>FROM emp e,dept d;</p>
+<h3 id="3）等值连接"><a href="#3）等值连接" class="headerlink" title="3）等值连接"></a>3）等值连接</h3><p>#两张表之间数据的关系是相等关系</p>
+<p>#通常是指主键和外键的对应</p>
+<p>#查询员工的信息和其所在部门的信息<br>SELECT e.ename,e.job,e.sal,e.deptno eno,d.deptno,d.dname,d.loc<br>FROM emp e,dept d<br>WHERE e.deptno = d.deptno;</p>
+<p>#如果多表查询时还有其他的普通限定条件，也写在where子句中，用and和连接条件连接</p>
+<p>#查询工资高于2000的员工信息以及其所在的部门信息<br>SELECT e.*,d.deptno dno,d.dname,d.loc<br>FROM emp e,dept d<br>WHERE e.deptno = d.deptno<br>AND e.sal &gt; 2000;</p>
+<h3 id="4）不等值连接"><a href="#4）不等值连接" class="headerlink" title="4）不等值连接"></a>4）不等值连接</h3><p>SELECT * FROM salgrade;</p>
+<p>#查询员工的信息和其所在的工资等级<br>SELECT e.<em>,s.</em><br>FROM emp e,salgrade s<br>WHERE e.sal BETWEEN s.losal AND s.hisal;</p>
+<h3 id="5）自连接"><a href="#5）自连接" class="headerlink" title="5）自连接"></a>5）自连接</h3><p>#如果一张表的数据内部有联系，主键和外键在同一张表</p>
+<p>#要将这样的关系体现出来使用自连接</p>
+<p>#首先将一张表看作是两张表，再将两张表的主键和外键进行对应</p>
+<p>#给同一张表起不同的别名，用不同的别名代表不同的表</p>
+<p>#查询emp表中员工的姓名和其上级的姓名<br>SELECT w.ename,m.ename manager<br>FROM emp w,emp m<br>WHERE w.mgr = m.empno;</p>
+<h3 id="6）外连接"><a href="#6）外连接" class="headerlink" title="6）外连接"></a>6）外连接</h3><p>#在多表查询中，有的数据不满足连接条件，在内连接中是无法显示</p>
+<p>#如果要显示这样的数据，使用外连接</p>
+<p>#如果要显示左边表中不满足连接条件的数据，使用左外连接：left outer join</p>
+<p>#如果要显示右边表中不满足连接条件的数据，使用右外连接：right outer join</p>
+<p>#查询emp表中员工的姓名和其上级的姓名，没有上级的员工也显示<br>SELECT w.ename,m.ename manager<br>FROM emp w LEFT OUTER JOIN emp m<br>ON w.mgr = m.empno;</p>
+<p>#查询员工信息和部门信息，没有员工的部门也显示<br>SELECT e.*,d.deptno dno,d.dname,d.loc<br>FROM emp e RIGHT OUTER JOIN dept d<br>ON e.deptno = d.deptno;</p>
+<p>#全外连接full outer join，mysql暂时不支持</p>
+<p>【练习】<br>1.查询EMP、DEPT表，输出的列包含员工姓名、工资、部门编号、部门名称、部门地址.<br>SELECT e.ename,e.sal,d.deptno,d.dname,d.loc<br>FROM emp e,dept d<br>WHERE e.deptno = d.deptno;</p>
+<p>2.查询工资等级为3/4/5级的员工姓名，工资，工资等级<br>SELECT e.ename,e.sal,s.grade<br>FROM emp e,salgrade s<br>WHERE e.sal BETWEEN s.losal AND s.hisal<br>AND s.grade &gt; 2;</p>
+<p>3.显示职位是CLERK的员工姓名，工资，工资等级，部门名称<br>SELECT e.ename,e.job,e.sal,s.grade,d.dname<br>FROM emp e,dept d,salgrade s<br>WHERE e.deptno = d.deptno<br>AND e.sal BETWEEN s.losal AND s.hisal<br>AND e.job = ‘CLERK’;</p>
+<p>4.查询emp表，显示员工姓名及其经理的姓名，没有经理的员工也需要显示<br>SELECT w.ename,m.ename manager<br>FROM emp w LEFT OUTER JOIN emp m<br>ON w.mgr = m.empno;</p>
+<p>5.列出EMP表中部门名称和这些部门的员工信息，同时列出那些没有员工的部门<br>SELECT d.dname,e.*<br>FROM emp e RIGHT OUTER JOIN dept d<br>ON e.deptno = d.deptno;</p>
+<h2 id="5、多行函数"><a href="#5、多行函数" class="headerlink" title="5、多行函数"></a>5、多行函数</h2><h3 id="1）多行函数"><a href="#1）多行函数" class="headerlink" title="1）多行函数"></a>1）多行函数</h3><p>#针对多行数据进行运算，只得到一个结果，就是多行函数</p>
+<p>#又称为分组函数，或聚合函数</p>
+<p>#sum() 求和<br>SELECT SUM(sal) FROM emp;</p>
+<p>#avg() 求平均值<br>SELECT AVG(sal) FROM emp;</p>
+<p>#sum和avg都只能对数字进行运算</p>
+<p>#count() 计数（行数）<br>SELECT COUNT(ename) FROM emp;<br>SELECT COUNT(*) FROM emp;</p>
+<p>#max() 最大值，min() 最小值<br>SELECT MAX(sal),MIN(sal) FROM emp;<br>SELECT MAX(hiredate),MIN(hiredate) FROM emp;<br>SELECT MAX(ename),MIN(ename) FROM emp;</p>
+<p>#分组函数在计算时会忽略空值<br>SELECT AVG(comm),COUNT(comm) FROM emp;<br>SELECT SUM(comm)/14,SUM(comm)/4 FROM emp;</p>
+<p>#如果要考虑空值，使用ifnull转换<br>SELECT AVG(IFNULL(comm,0)) FROM emp;</p>
+<p>#可以使用where子句去限定分组函数计算的范围</p>
+<p>#找出职位是salesman的员工的最高工资<br>SELECT MAX(sal) FROM emp<br>WHERE job = ‘SALESMAN’;</p>
+<p>#找出10号部门的平均工资<br>SELECT AVG(sal) FROM emp<br>WHERE deptno = 10;</p>
+<p>#oracle中普通列和分组函数是不能直接一起查询的</p>
+<p>#mysql虽然允许这样的语句执行，但是结果没有意义</p>
+<p>#select ename,count(sal) from emp;</p>
+<h3 id="2）group-BY子句"><a href="#2）group-BY子句" class="headerlink" title="2）group BY子句"></a>2）group BY子句</h3><p>#查询每个部门的平均工资<br>SELECT deptno,AVG(sal) FROM emp<br>GROUP BY deptno;</p>
+<p>#select后面既有普通列又有分组函数时，必须写group by子句</p>
+<p>#并且出现在select后面的普通列必须也在group by后面</p>
+<p>#查询每个职位的人数<br>SELECT job,COUNT(*) FROM emp<br>GROUP BY job;</p>
+<p>#可以多列分组</p>
+<p>#查询每个部门各个职位的最低工资<br>SELECT deptno,job,MIN(sal) FROM emp<br>GROUP BY deptno,job;</p>
+<h3 id="3）having子句"><a href="#3）having子句" class="headerlink" title="3）having子句"></a>3）having子句</h3><p>#查询部门人数多于5人的部门编号<br>/*<br>select deptno,count(<em>) from emp<br>where count(</em>) &gt; 5<br>group by deptno;</p>
+<p>where子句中不能出现分组函数<br>*/</p>
+<p>#要对分组函数的结果进行限定，使用having子句</p>
+<p>#having必须在group by后面</p>
+<p>#使用group by可以不用having，但是使用having必须使用group by<br>SELECT deptno,COUNT(<em>) FROM emp<br>GROUP BY deptno<br>HAVING COUNT(</em>) &gt; 5;</p>
+<h2 id="6、子查询"><a href="#6、子查询" class="headerlink" title="6、子查询"></a>6、子查询</h2><p>#查询工资高于allen的员工信息<br>SELECT sal FROM emp<br>WHERE ename = ‘ALLEN’;</p>
+<p>SELECT * FROM emp<br>WHERE sal &gt; 1600;</p>
+<p>#当查询语句的条件不是客观数据，而是表中的数据时，使用子查询</p>
+<p>#子查询又叫做嵌套查询，将一个查询的结果作为另一个查询的条件</p>
+<p>#子查询写在主查询中，必须使用括号表示运算顺序<br>SELECT * FROM emp<br>WHERE sal &gt;<br>(SELECT sal FROM emp WHERE ename = ‘ALLEN’) ;</p>
+<p>#习惯上，将子查询写在比较运算的右边，而且子查询单独占一行</p>
+<p>#主查询中作为条件的列，必须和子查询的结果数据类型一致</p>
+<h3 id="1）单行子查询"><a href="#1）单行子查询" class="headerlink" title="1）单行子查询"></a>1）单行子查询</h3><p>#子查询的结果如果是一行一列数据，就是单行子查询</p>
+<p>#查询跟allen的部门和职位都一样的员工信息<br>SELECT * FROM emp<br>WHERE deptno =<br>(SELECT deptno FROM emp WHERE ename = ‘ALLEN’)<br>AND job =<br>(SELECT job FROM emp WHERE ename = ‘ALLEN’);</p>
+<p>#主查询和子查询的数据可以不在同一张表</p>
+<p>#查询allen所在的部门名称<br>1.多表查询<br>SELECT d.dname<br>FROM emp e,dept d<br>WHERE e.deptno = d.deptno<br>AND e.ename = ‘ALLEN’;</p>
+<p>#多表查询先生成笛卡尔积，再在笛卡尔积中找满足条件的数据</p>
+<p>#一共找了14*4=56次</p>
+<p>2.子查询<br>SELECT dname FROM dept<br>WHERE deptno =<br>(SELECT deptno FROM emp WHERE ename = ‘ALLEN’);</p>
+<p>#先执行子查询，找了14次，再在主查询中查询，找了4次</p>
+<p>#一共找了14+4=18次</p>
+<p>#子查询的效率高于多表查询</p>
+<p>#如果查询结果来自多张表，只能使用多表查询</p>
+<p>#如果查询结果来自一张表，只是用到另一张表的数据作为条件</p>
+<p>#可以用子查询也可以用多表查询，推荐使用子查询</p>
+<p>#子查询中可以使用分组函数</p>
+<p>#查询emp表中工资最高的员工姓名<br>SELECT ename FROM emp<br>WHERE sal =<br>(SELECT MAX(sal) FROM emp);</p>
+<p>#having子句中可以使用子查询</p>
+<p>#查询部门的平均工资高于所有员工平均工资的部门<br>SELECT deptno,AVG(sal) FROM emp<br>GROUP BY deptno<br>HAVING AVG(sal) &gt;<br>(SELECT AVG(sal) FROM emp);</p>
+<h3 id="2）多行子查询"><a href="#2）多行子查询" class="headerlink" title="2）多行子查询"></a>2）多行子查询</h3><p>#子查询的结果如果是多行一列数据，就是多行子查询</p>
+<p>#多行子查询必须使用多行比较运算符</p>
+<p>#in 匹配多个值</p>
+<p>#查询工资大于等于3000的员工所在的部门名称<br>SELECT dname FROM dept<br>WHERE deptno IN<br>(SELECT DISTINCT deptno FROM emp WHERE sal &gt;= 3000);</p>
+<p>#any，多个条件满足其中任意一个就可以返回结果</p>
+<p>#查询工资高于任意一个部门的平均工资的员工信息<br>SELECT * FROM emp<br>WHERE sal &gt; ANY<br>(SELECT AVG(sal) FROM emp GROUP BY deptno);</p>
+<p>#大于any表示大于最小值，小于any表示小于最大值</p>
+<p>#all，多个条件必须全部满足才能返回结果<br>SELECT * FROM emp<br>WHERE sal &gt; ALL<br>(SELECT AVG(sal) FROM emp GROUP BY deptno);</p>
+<p>#大于all表示大于最大值，小于all表示小于最小值</p>
+<h3 id="3）多列子查询"><a href="#3）多列子查询" class="headerlink" title="3）多列子查询"></a>3）多列子查询</h3><p>#子查询的结果如果是多行多列数据，就是多列子查询</p>
+<p>#in 匹配多列的值</p>
+<p>#查询跟allen的部门和职位都一样的员工信息<br>SELECT * FROM emp<br>WHERE (deptno,job) IN<br>(SELECT deptno,job FROM emp WHERE ename = ‘ALLEN’);</p>
+<p>#主查询中列的数量、顺序以及数据类型必须和子查询中的列一致</p>
+<p>#子查询的结果可以看作是一张表，再进行查询</p>
+<p>#此时子查询写在from后面，必须起别名<br>SELECT * FROM<br>(SELECT ename,job,sal,comm,12*sal nianxin,sal+IFNULL(comm,0) yongjin FROM emp) e<br>WHERE yongjin &gt; 2000;</p>
+<p>#先用一个查询语句构造出一张表，再和其他表做多表查询</p>
+<h2 id="7、集合操作"><a href="#7、集合操作" class="headerlink" title="7、集合操作"></a>7、集合操作</h2><p>#集合操作是指，将查询结果看作是一个集合，集合与集合之间可以做集合操作</p>
+<p>#集合操作：合集、交集、差集、补集</p>
+<p>#mysql中只支持合集操作，union，union all</p>
+<p>#集合操作的效率高于条件组合的查询效率</p>
+<p>#进行集合操作的查询语句，查询的列必须一致</p>
+<p>SELECT ename,job,sal,deptno FROM emp<br>WHERE deptno = 20<br>UNION<br>SELECT ename,job,sal,deptno FROM emp<br>WHERE sal &lt; 2000;</p>
+<p>#union all会显示重复数据<br>SELECT ename,job,sal,deptno FROM emp<br>WHERE deptno = 20<br>UNION ALL<br>SELECT ename,job,sal,deptno FROM emp<br>WHERE sal &lt; 2000;</p>
+<h1 id="数据控制语句（DCL）"><a href="#数据控制语句（DCL）" class="headerlink" title="数据控制语句（DCL）"></a>数据控制语句（DCL）</h1><p>DCL（Data Control Language）是数据库控制语言。是用来设置或更改<a href="https://baike.baidu.com/item/数据库用户" target="_blank" rel="noopener">数据库用户</a>或角色权限的语句，包括（grant,deny,<a href="https://baike.baidu.com/item/revoke" target="_blank" rel="noopener">revoke</a>等）语句。在默认状态下，只有sysadmin,dbcreator,db_owner或db_securityadmin等人员才有权力执行DCL</p>
+<h1 id="事物控制语句（TCL）"><a href="#事物控制语句（TCL）" class="headerlink" title="事物控制语句（TCL）"></a>事物控制语句（TCL）</h1><p>执行的dml语句和ddl语句都是以事务的形式存在的，事务必须提交才能永久生效，可以回滚撤销操作，mysql默认自动提交是开启的，关闭自动提交：<br>SET autocommit=0;</p>
+<p>COMMIT; #提交<br>ROLLBACK; #回滚</p>
+<p>DDL语句都是自动提交的，并且不能关闭</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/wx794/tags/MySQL/">#MySQL</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/07/02/管理学原理/">管理学原理重点知识点</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/06/18/近代史重要会议/">近代史重要会议</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2020/06/17/history/">中国近现代史</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/wx794/2019/11/20/run/">那些年靠着坑蒙拐骗做测试的日子</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/?lang=en">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-instagram"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://dribbble.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-dribbble"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://plus.google.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-google-plus"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://www.behance.net/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-behance"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="https://500px.com/">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-500px"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:1334819965@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+<script src="/wx794/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
